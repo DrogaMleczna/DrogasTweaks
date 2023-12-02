@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#minecraft:beach",
+  "spawners":
+  {
+    "type": "drogastweaks:crab",
+    "weight": 150,
+    "minCount": 2,
+    "maxCount": 6
+  }
+}
