@@ -1,0 +1,13 @@
+// 1.20.1	2023-12-03T20:43:05.6532096	Block States: drogastweaks
+d70755b4ca433cd2c236ae03a65a928dcd387002 assets/drogastweaks/blockstates/flint_block.json
+e951aa55142571969a1b9d1e6a2c7da728b04d24 assets/drogastweaks/blockstates/twigs.json
+e5f3d9c64a75c1062516360c14eb920f2c7b23a0 assets/drogastweaks/blockstates/willow_leaves.json
+d0b68ab6a78305a45746ffbbcd1c4d161e4744bd assets/drogastweaks/blockstates/willow_planks.json
+63afa1ef1f43d956028112a9ade8c6fa7b9fcdba assets/drogastweaks/models/block/flint_block.json
+cd0ec8c2107be100e5d20daefcf51ef9200af478 assets/drogastweaks/models/block/twigs.json
+371b40570781b52c7df1ccc67eac3cdcea9b4b47 assets/drogastweaks/models/block/willow_leaves.json
+8db1ebe2538b23b68e113d79d848ead43e29ad6e assets/drogastweaks/models/block/willow_planks.json
+b76f831c3daccf2df4520cfd9e88d11e3a9b6141 assets/drogastweaks/models/item/flint_block.json
+29314ffb8a8cf76f5a69e19890e0ccb0c8e520e4 assets/drogastweaks/models/item/twigs.json
+8e87a6b8c024ad3bfde230a4c93d87102dd1b3cf assets/drogastweaks/models/item/willow_leaves.json
+b97a070ce9cb60c3cd50c75675a1ed8dad5258df assets/drogastweaks/models/item/willow_planks.json

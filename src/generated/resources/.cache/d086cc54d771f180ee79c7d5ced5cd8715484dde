@@ -1,0 +1,5 @@
+// 1.20.1	2023-12-03T20:43:05.6572096	Tags for minecraft:block mod id drogastweaks
+83162b6224100da4da8b03ea81d222179cf44197 data/minecraft/tags/blocks/logs_that_burn.json
+ed854c715e0ee51dde0a0b031188ef8f9d591259 data/minecraft/tags/blocks/mineable/pickaxe.json
+ed854c715e0ee51dde0a0b031188ef8f9d591259 data/minecraft/tags/blocks/needs_stone_tool.json
+267037a47322bde95bb9907cd4789d0168afc61d data/minecraft/tags/blocks/planks.json
