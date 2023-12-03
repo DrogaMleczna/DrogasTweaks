@@ -17,14 +17,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(ModBlocks.FLINT_BLOCK.get());
-        this.dropSelf(ModBlocks.WILLOW_PLANKS.get());
-        this.dropSelf(ModBlocks.WILLOW_LOG.get());
-        this.dropSelf(ModBlocks.WILLOW_WOOD.get());
-        this.dropSelf(ModBlocks.STRIPPED_WILLOW_LOG.get());
-        this.dropSelf(ModBlocks.STRIPPED_WILLOW_WOOD.get());
-        this.dropSelf(ModBlocks.TWIGS.get());
-        this.add(ModBlocks.WILLOW_LEAVES.get(), block ->
+        dropSelf(ModBlocks.FLINT_BLOCK.get());
+        dropSelf(ModBlocks.WILLOW_PLANKS.get());
+        dropSelf(ModBlocks.WILLOW_LOG.get());
+        dropSelf(ModBlocks.WILLOW_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_WILLOW_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_WILLOW_WOOD.get());
+        dropSelf(ModBlocks.TWIGS.get());
+        add(ModBlocks.WILLOW_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.FLINT_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES)); //TODO: Change to sapling
 
     }
