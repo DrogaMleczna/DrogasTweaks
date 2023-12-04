@@ -1,7 +1,10 @@
 {
   "item.drogastweaks.ruby": "Ruby",
   "item.drogastweaks.baton": "Wooden Baton",
+
   "block.drogastweaks.twigs": "Twigs",
+  "block.drogastweaks.dead_tree_sapling": "Dead Tree Sapling",
+
   "block.drogastweaks.flint_block": "Block Of Flint",
 
   "block.drogastweaks.willow_planks": "Willow Planks",
@@ -11,10 +14,13 @@
   "block.drogastweaks.willow_wood": "Willow Wood",
   "block.drogastweaks.stripped_willow_log": "Stripped Willow Log",
   "block.drogastweaks.stripped_willow_wood": "Stripped Willow Wood",
+
   "item.drogastweaks.crab_spawn_egg": "Crab Spawn Egg",
   "entity.drogastweaks.crab" : "Crab",
   "item.drogastweaks.crab_leg": "Crab Leg",
   "item.drogastweaks.cooked_crab_leg": "Cooked Crab Leg",
+
   "item.drogastweaks.pear": "Pear",
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

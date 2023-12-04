@@ -26,26 +26,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.FLINT_BLOCK);
+
         leavesBlock(ModBlocks.TWIGS);
-        blockWithItem(ModBlocks.WILLOW_PLANKS);
         leavesBlock(ModBlocks.WILLOW_LEAVES);
 
-        //logBlock((RotatedPillarBlock) ModBlocks.WILLOW_LOG.get());
-        //axisBlock(((RotatedPillarBlock) ModBlocks.WILLOW_WOOD.get()), blockTexture(ModBlocks.WILLOW_LOG.get()), blockTexture(ModBlocks.WILLOW_LOG.get()));
-
-        //axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
-        //        new ResourceLocation(DrogasTweaks.MOD_ID, "block/stripped_willow_log_top"));
-        //axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
-        //        blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()));
+        blockWithItem(ModBlocks.WILLOW_PLANKS);
 
         logBlockWithItem(ModBlocks.WILLOW_LOG);
         logBlockWithItem(ModBlocks.STRIPPED_WILLOW_LOG);
+
         axisBlockWithItem(ModBlocks.WILLOW_WOOD, ModBlocks.WILLOW_LOG);
         axisBlockWithItem(ModBlocks.STRIPPED_WILLOW_WOOD, ModBlocks.STRIPPED_WILLOW_LOG);
-        //blockItem(ModBlocks.WILLOW_LOG);
-        //blockItem(ModBlocks.WILLOW_WOOD);
-        //blockItem(ModBlocks.STRIPPED_WILLOW_LOG);
-        //blockItem(ModBlocks.STRIPPED_WILLOW_WOOD);
+
+        saplingBlock(ModBlocks.WILLOW_SAPLING);
+
+        saplingBlock(ModBlocks.DEAD_TREE_SAPLING);
+
 
 
     }
@@ -79,6 +75,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
     private ResourceLocation blockKey(RegistryObject<Block> block) {
         return ForgeRegistries.BLOCKS.getKey(block.get());
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject){
+        simpleBlock(blockRegistryObject.get(), models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
 }

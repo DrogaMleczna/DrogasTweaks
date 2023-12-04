@@ -1,9 +1,11 @@
-// 1.20.1	2023-12-03T21:37:36.5680116	Loot Tables
+// 1.20.1	2023-12-04T18:05:17.5962307	Loot Tables
+b557ed32adf691b012fc85ee5360015d38d92fcd data/drogastweaks/loot_tables/blocks/dead_tree_sapling.json
 102bab931443526d17b8746cd6caa60eb9558db3 data/drogastweaks/loot_tables/blocks/flint_block.json
 5247698fd9bb792d630fa3ee57fb737479321499 data/drogastweaks/loot_tables/blocks/stripped_willow_log.json
 a469bda43d1095fe71eff5136b0076f936e32c85 data/drogastweaks/loot_tables/blocks/stripped_willow_wood.json
 a406a6437a8c0655d17b27b1ee531892b3923f62 data/drogastweaks/loot_tables/blocks/twigs.json
-1aa23d0b6b657d993417bc0d276c1c544009d95d data/drogastweaks/loot_tables/blocks/willow_leaves.json
+c2967a3dc6d9830bc36767d909d3e1ffdcbc584b data/drogastweaks/loot_tables/blocks/willow_leaves.json
 fea98f927b26b766310f8370eb2d8bb6c12ab780 data/drogastweaks/loot_tables/blocks/willow_log.json
 02de56f58a7c276ac6e3fa008a6d8c9358fd0a19 data/drogastweaks/loot_tables/blocks/willow_planks.json
+b4c4e91b3882bf664d2818811e8f0ead67ed4889 data/drogastweaks/loot_tables/blocks/willow_sapling.json
 36cb959a6f1884957b754f47ad69c72ead1ce58e data/drogastweaks/loot_tables/blocks/willow_wood.json

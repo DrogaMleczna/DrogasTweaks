@@ -1,4 +1,6 @@
-// 1.20.1	2023-12-04T16:54:08.3221885	Registries
+// 1.20.1	2023-12-04T18:25:12.9440957	Registries
 cde7dd737b887592a60f5e9942d4a82e246b249f data/drogastweaks/forge/biome_modifier/add_flint_block.json
+d8bd31ce606e298c7bd481c806e40e471b8a8ee3 data/drogastweaks/worldgen/configured_feature/dead_tree.json
 5abe5793fb161acedc50db58b6b2ab5e3bfb848e data/drogastweaks/worldgen/configured_feature/flint_block.json
+437a9923e2ae01ea3a0885b909eb9b4968480fe2 data/drogastweaks/worldgen/configured_feature/willow.json
 7be439a6c8265ca0aa61d85de95fb91ada41dd7c data/drogastweaks/worldgen/placed_feature/flint_block_placed.json

@@ -20,22 +20,25 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.drogas_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BATON.get());
-                        pOutput.accept(ModItems.RUBY.get());
+
                         pOutput.accept(ModItems.CRAB_LEG.get());
-                        //pOutput.accept(ModItems.CRAB_SPAWN_EGG.get());
                         pOutput.accept(ModItems.COOKED_CRAB_LEG.get());
+                        pOutput.accept(ModItems.CRAB_SPAWN_EGG.get());
+
                         pOutput.accept(ModItems.PEAR.get());
+
                         pOutput.accept(ModBlocks.WILLOW_LEAVES.get());
                         pOutput.accept(ModBlocks.WILLOW_LOG.get());
                         pOutput.accept(ModBlocks.WILLOW_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_WILLOW_LOG.get());
                         pOutput.accept(ModBlocks.STRIPPED_WILLOW_WOOD.get());
                         pOutput.accept(ModBlocks.WILLOW_PLANKS.get());
+                        pOutput.accept(ModBlocks.WILLOW_SAPLING.get());
+
                         pOutput.accept(ModBlocks.TWIGS.get());
+                        pOutput.accept(ModBlocks.DEAD_TREE_SAPLING.get());
+
                         pOutput.accept(ModBlocks.FLINT_BLOCK.get());
-                        pOutput.accept(ModItems.CRAB_SPAWN_EGG.get());
-
-
                     })
                     .build());
 

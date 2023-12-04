@@ -4,6 +4,8 @@ import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.item.custom.ModFlammableRotatedPillarBlock;
+import com.drogamleczna.drogastweaks.worldgen.tree.DeadTreeGrower;
+import com.drogamleczna.drogastweaks.worldgen.tree.WillowTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -93,8 +95,12 @@ public class ModBlocks
                 }
             });
 
-    //public static final RegistryObject<Block> WILLOW_SAPLING = registerBlock("willow_sapling",
-    //        () -> new SaplingBlock());
+    public static final RegistryObject<Block> WILLOW_SAPLING = registerBlock("willow_sapling",
+            () -> new SaplingBlock(new WillowTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+
+    public static final RegistryObject<Block> DEAD_TREE_SAPLING = registerBlock("dead_tree_sapling",
+            () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 
