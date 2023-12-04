@@ -73,7 +73,7 @@ public class CrabEntity extends Animal {
     }
 
     public MobType getMobType() {
-        return MobType.WATER;
+        return MobType.ARTHROPOD;
     }
 
     @Override
