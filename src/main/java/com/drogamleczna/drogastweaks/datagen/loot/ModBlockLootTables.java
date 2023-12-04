@@ -23,7 +23,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.WILLOW_WOOD.get());
         dropSelf(ModBlocks.STRIPPED_WILLOW_LOG.get());
         dropSelf(ModBlocks.STRIPPED_WILLOW_WOOD.get());
-        dropSelf(ModBlocks.TWIGS.get());
+        dropOther(ModBlocks.TWIGS.get(), Items.STICK);
         add(ModBlocks.WILLOW_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.FLINT_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES)); //TODO: Change to sapling
 

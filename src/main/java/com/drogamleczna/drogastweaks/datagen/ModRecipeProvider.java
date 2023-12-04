@@ -43,12 +43,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.FLINT_BLOCK.get()), has(ModBlocks.FLINT_BLOCK.get()))
                 .save(pWriter);
 
-        //simpleCookingRecipe(pWriter, "#cooking", , 200, ModItems.CRAB_LEG.get(), ModItems.COOKED_CRAB_LEG.get(), 0.25f);
+        //SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.smoking(, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 150)
+        //        .unlockedBy("criteria", criteria) // How the recipe is unlocked
+        //        .save(pWriter);
+        oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");
+
+        //simpleCookingRecipe(pWriter, "#cooking", (RecipeSerializer<? extends AbstractCookingRecipe>) pWriter, 200, ModItems.CRAB_LEG.get(), ModItems.COOKED_CRAB_LEG.get(), 0.25f);
 
         //simpleCookingRecipe(pWriter, , , 200F, ModItems.CRAB_LEG, ModItems.COOKED_CRAB_LEG, 0.25f);
 
 
     }
+
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
@@ -66,19 +72,4 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
-    protected static void simpleCookingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, String pCookingMethod, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, int pCookingTime, ItemLike pIngredient, ItemLike pResult, float pExperience) {
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.FOOD, pResult, pExperience, pCookingTime, pCookingSerializer).unlockedBy(getHasName(pIngredient), has(pIngredient)).save(pFinishedRecipeConsumer, getItemName(pResult) + "_from_" + pCookingMethod);
-    }
-
-    protected static void cookRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer, String pCookingMethod, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, int pCookingTime) {
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.BEEF, Items.COOKED_BEEF, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.CHICKEN, Items.COOKED_CHICKEN, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.COD, Items.COOKED_COD, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.KELP, Items.DRIED_KELP, 0.1F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.SALMON, Items.COOKED_SALMON, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.MUTTON, Items.COOKED_MUTTON, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.PORKCHOP, Items.COOKED_PORKCHOP, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.POTATO, Items.BAKED_POTATO, 0.35F);
-        simpleCookingRecipe(pFinishedRecipeConsumer, pCookingMethod, pCookingSerializer, pCookingTime, Items.RABBIT, Items.COOKED_RABBIT, 0.35F);
-    }
 }

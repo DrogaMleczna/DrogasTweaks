@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "drogastweaks:twigs"
+          "name": "minecraft:stick"
         }
       ],
       "rolls": 1.0

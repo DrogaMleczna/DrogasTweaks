@@ -30,5 +30,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_WILLOW_WOOD.get());
         this.tag(BlockTags.PLANKS)
                 .add(ModBlocks.WILLOW_PLANKS.get());
+        this.tag(BlockTags.LEAVES)
+                .add(ModBlocks.TWIGS.get())
+                .add(ModBlocks.WILLOW_LEAVES.get());
+        this.tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.TWIGS.get())
+                .add(ModBlocks.WILLOW_LEAVES.get());
+
     }
 }

@@ -1,0 +1,4 @@
+// 1.20.1	2023-12-04T16:54:08.3221885	Registries
+cde7dd737b887592a60f5e9942d4a82e246b249f data/drogastweaks/forge/biome_modifier/add_flint_block.json
+5abe5793fb161acedc50db58b6b2ab5e3bfb848e data/drogastweaks/worldgen/configured_feature/flint_block.json
+7be439a6c8265ca0aa61d85de95fb91ada41dd7c data/drogastweaks/worldgen/placed_feature/flint_block_placed.json

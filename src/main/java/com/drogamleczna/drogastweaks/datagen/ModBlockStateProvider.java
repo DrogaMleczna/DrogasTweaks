@@ -13,9 +13,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static net.minecraft.data.models.model.ModelTemplates.CUBE_COLUMN;
+
 
 public class ModBlockStateProvider extends BlockStateProvider {
+
+    private static final String CUBE_COLUMN = "minecraft:block/cube_column";
 
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, DrogasTweaks.MOD_ID, exFileHelper);
@@ -28,14 +30,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.WILLOW_PLANKS);
         leavesBlock(ModBlocks.WILLOW_LEAVES);
 
-        logBlock((RotatedPillarBlock) ModBlocks.WILLOW_LOG.get());
-        axisBlock(((RotatedPillarBlock) ModBlocks.WILLOW_WOOD.get()), blockTexture(ModBlocks.WILLOW_LOG.get()), blockTexture(ModBlocks.WILLOW_LOG.get()));
+        //logBlock((RotatedPillarBlock) ModBlocks.WILLOW_LOG.get());
+        //axisBlock(((RotatedPillarBlock) ModBlocks.WILLOW_WOOD.get()), blockTexture(ModBlocks.WILLOW_LOG.get()), blockTexture(ModBlocks.WILLOW_LOG.get()));
 
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
-                new ResourceLocation(DrogasTweaks.MOD_ID, "block/stripped_willow_log_top"));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
-                blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()));
+        //axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
+        //        new ResourceLocation(DrogasTweaks.MOD_ID, "block/stripped_willow_log_top"));
+        //axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_WILLOW_WOOD.get()), blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()),
+        //        blockTexture(ModBlocks.STRIPPED_WILLOW_LOG.get()));
 
+        logBlockWithItem(ModBlocks.WILLOW_LOG);
+        logBlockWithItem(ModBlocks.STRIPPED_WILLOW_LOG);
+        axisBlockWithItem(ModBlocks.WILLOW_WOOD, ModBlocks.WILLOW_LOG);
+        axisBlockWithItem(ModBlocks.STRIPPED_WILLOW_WOOD, ModBlocks.STRIPPED_WILLOW_LOG);
         //blockItem(ModBlocks.WILLOW_LOG);
         //blockItem(ModBlocks.WILLOW_WOOD);
         //blockItem(ModBlocks.STRIPPED_WILLOW_LOG);
@@ -57,14 +63,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
-    //public void logBlockWithItem(RegistryObject<Block> block) {
-    //    logBlock((RotatedPillarBlock) block.get());
-    //    simpleBlockItem(block.get(), models().withExistingParent(DrogasTweaks.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
-    //}
-//
-    //public void axisBlockWithItem(RegistryObject<Block> block, RegistryObject<Block> blockSide) {
-    //    axisBlock((RotatedPillarBlock) block.get(), blockTexture(blockSide.get()), blockTexture(blockSide.get()));
-    //    simpleBlockItem(block.get(), models().withExistingParent(DrogasTweaks.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
-    //}
+    public void logBlockWithItem(RegistryObject<Block> block) {
+        logBlock((RotatedPillarBlock) block.get());
+        simpleBlockItem(block.get(), models().withExistingParent(DrogasTweaks.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
+    }
+
+
+    public void axisBlockWithItem(RegistryObject<Block> block, RegistryObject<Block> blockSide) {
+        axisBlock((RotatedPillarBlock) block.get(), blockTexture(blockSide.get()), blockTexture(blockSide.get()));
+        simpleBlockItem(block.get(), models().withExistingParent(DrogasTweaks.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
+    }
+
+    private String blockName(RegistryObject<Block> block) {
+        return blockKey(block).getPath();
+    }
+    private ResourceLocation blockKey(RegistryObject<Block> block) {
+        return ForgeRegistries.BLOCKS.getKey(block.get());
+    }
 
 }
