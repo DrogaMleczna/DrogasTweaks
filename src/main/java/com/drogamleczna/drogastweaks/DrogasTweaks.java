@@ -7,6 +7,7 @@ import com.drogamleczna.drogastweaks.entity.client.CrabRenderer;
 import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
+import com.drogamleczna.drogastweaks.worldgen.tree.ModFoliagePlacers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -37,6 +38,7 @@ public class DrogasTweaks {
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
+        ModFoliagePlacers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

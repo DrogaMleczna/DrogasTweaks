@@ -4,8 +4,8 @@
   "spawners":
   {
     "type": "drogastweaks:crab",
-    "weight": 1500,
-    "minCount": 2,
-    "maxCount": 6
+    "weight": 200,
+    "minCount": 3,
+    "maxCount": 8
   }
 }

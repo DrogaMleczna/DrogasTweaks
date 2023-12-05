@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -125,7 +126,12 @@ public class CrabEntity extends Animal {
     }
 
     public static boolean canSpawn(EntityType<CrabEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
-        return Animal.checkAnimalSpawnRules(entityType, level, spawnType, position, random);
+        return checkCrabSpawnRules(entityType, level, spawnType, position, random);
+    }
+
+
+    public static boolean checkCrabSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        return pLevel.getBlockState(pPos.below()).is(BlockTags.SAND) && isBrightEnoughToSpawn(pLevel, pPos);
     }
 
     @Override
