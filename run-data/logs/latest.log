@@ -1,33 +1,33 @@
-[05Dec2023 21:15:31.904] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\marce\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.1, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, drogastweaks, --all, --output, C:\Users\marce\Desktop\DrogasTweaks\src\generated\resources, --existing, C:\Users\marce\Desktop\DrogasTweaks\src\main\resources]
-[05Dec2023 21:15:31.910] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8.1 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[05Dec2023 21:15:32.026] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[05Dec2023 21:15:32.078] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/marce/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[05Dec2023 21:15:32.334] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.1\cf7ffa37334b68b8b0d92a45cc5222f9c71394b8\javafmllanguage-1.20.1-47.2.1.jar is missing mods.toml file
-[05Dec2023 21:15:32.337] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.1\c0396469677b986ecb5a9b262f32a7dd4bd9ef1c\lowcodelanguage-1.20.1-47.2.1.jar is missing mods.toml file
-[05Dec2023 21:15:32.341] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.1\23935fad3965a65e9edd0a5c1c629141cbb873aa\mclanguage-1.20.1-47.2.1.jar is missing mods.toml file
-[05Dec2023 21:15:32.345] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.1\ca36242b045010330a1cd61cadb3212a0404188\fmlcore-1.20.1-47.2.1.jar is missing mods.toml file
-[05Dec2023 21:15:32.418] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[05Dec2023 21:15:33.657] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\marce\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, drogastweaks, --all, --output, C:\Users\marce\Desktop\DrogasTweaks\src\generated\resources, --existing, C:\Users\marce\Desktop\DrogasTweaks\src\main\resources]
-[05Dec2023 21:15:34.007] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [drogastweaks]
-[05Dec2023 21:15:37.863] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.1, for MC 1.20.1 with MCP 20230612.114412
-[05Dec2023 21:15:37.864] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.1 Initialized
-[05Dec2023 21:15:38.084] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[05Dec2023 21:15:38.090] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.933 ms
-[05Dec2023 21:15:38.362] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/marce/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[05Dec2023 21:15:38.362] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/marce/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[05Dec2023 21:15:38.534] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[05Dec2023 21:15:38.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 32 ms
-[05Dec2023 21:15:38.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[05Dec2023 21:15:38.603] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 35 ms
-[05Dec2023 21:15:38.603] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: drogastweaks
-[05Dec2023 21:15:38.714] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: drogastweaks finished after 110 ms
-[05Dec2023 21:15:38.714] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: drogastweaks
-[05Dec2023 21:15:38.718] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: drogastweaks finished after 4 ms
-[05Dec2023 21:15:38.718] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id drogastweaks
-[05Dec2023 21:15:38.729] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id drogastweaks finished after 10 ms
-[05Dec2023 21:15:38.729] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id drogastweaks
-[05Dec2023 21:15:38.731] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id drogastweaks finished after 1 ms
-[05Dec2023 21:15:38.731] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[05Dec2023 21:15:38.746] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 15 ms
-[05Dec2023 21:15:38.747] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 213 ms
-[05Dec2023 21:15:38.755] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 74, old count: 74, new count: 75, removed stale: 0, written: 0
+[05Dec2023 21:43:19.400] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\marce\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.1, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, drogastweaks, --all, --output, C:\Users\marce\Desktop\DrogasTweaks\src\generated\resources, --existing, C:\Users\marce\Desktop\DrogasTweaks\src\main\resources]
+[05Dec2023 21:43:19.405] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8.1 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[05Dec2023 21:43:19.520] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[05Dec2023 21:43:19.576] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/marce/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[05Dec2023 21:43:19.900] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.1\cf7ffa37334b68b8b0d92a45cc5222f9c71394b8\javafmllanguage-1.20.1-47.2.1.jar is missing mods.toml file
+[05Dec2023 21:43:19.905] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.1\c0396469677b986ecb5a9b262f32a7dd4bd9ef1c\lowcodelanguage-1.20.1-47.2.1.jar is missing mods.toml file
+[05Dec2023 21:43:19.909] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.1\23935fad3965a65e9edd0a5c1c629141cbb873aa\mclanguage-1.20.1-47.2.1.jar is missing mods.toml file
+[05Dec2023 21:43:19.913] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\marce\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.1\ca36242b045010330a1cd61cadb3212a0404188\fmlcore-1.20.1-47.2.1.jar is missing mods.toml file
+[05Dec2023 21:43:20.014] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[05Dec2023 21:43:21.149] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\marce\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, drogastweaks, --all, --output, C:\Users\marce\Desktop\DrogasTweaks\src\generated\resources, --existing, C:\Users\marce\Desktop\DrogasTweaks\src\main\resources]
+[05Dec2023 21:43:21.491] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [drogastweaks]
+[05Dec2023 21:43:25.651] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.1, for MC 1.20.1 with MCP 20230612.114412
+[05Dec2023 21:43:25.652] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.1 Initialized
+[05Dec2023 21:43:25.893] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[05Dec2023 21:43:25.898] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.411 ms
+[05Dec2023 21:43:26.281] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/marce/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[05Dec2023 21:43:26.282] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/marce/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.2.1_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[05Dec2023 21:43:26.493] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[05Dec2023 21:43:26.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 39 ms
+[05Dec2023 21:43:26.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[05Dec2023 21:43:26.579] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 45 ms
+[05Dec2023 21:43:26.580] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: drogastweaks
+[05Dec2023 21:43:26.712] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: drogastweaks finished after 132 ms
+[05Dec2023 21:43:26.712] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: drogastweaks
+[05Dec2023 21:43:26.718] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: drogastweaks finished after 5 ms
+[05Dec2023 21:43:26.718] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id drogastweaks
+[05Dec2023 21:43:26.733] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id drogastweaks finished after 14 ms
+[05Dec2023 21:43:26.733] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id drogastweaks
+[05Dec2023 21:43:26.736] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id drogastweaks finished after 2 ms
+[05Dec2023 21:43:26.736] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[05Dec2023 21:43:26.759] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 21 ms
+[05Dec2023 21:43:26.759] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 266 ms
+[05Dec2023 21:43:26.773] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 74, old count: 74, new count: 75, removed stale: 0, written: 1
