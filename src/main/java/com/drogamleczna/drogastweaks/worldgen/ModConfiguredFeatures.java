@@ -38,6 +38,7 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?,?>> WILLOW_KEY = registerKey("willow");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEAD_TREE_KEY = registerKey("dead_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HEDGE_KEY = registerKey("hedge");
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
 
@@ -66,6 +67,15 @@ public class ModConfiguredFeatures {
 
                 BlockStateProvider.simple(ModBlocks.TWIGS.get()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+
+                new TwoLayersFeatureSize(1, 0, 1)).build());
+
+        register(context, HEDGE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(Blocks.OAK_LOG),
+                new StraightTrunkPlacer(1,0,0),
+
+                BlockStateProvider.simple(Blocks.OAK_LEAVES),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 1),
 
                 new TwoLayersFeatureSize(1, 0, 1)).build());
 

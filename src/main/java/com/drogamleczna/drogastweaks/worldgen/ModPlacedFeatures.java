@@ -10,6 +10,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
@@ -23,6 +24,7 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> WILLOW_PLACED_KEY = registerKey("willow_placed");
     public static final ResourceKey<PlacedFeature> DEAD_TREE_PLACED_KEY = registerKey("dead_tree_placed");
+    public static final ResourceKey<PlacedFeature> HEDGE_PLACED_KEY = registerKey("hedge_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?,?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -35,8 +37,12 @@ public class ModPlacedFeatures {
                         ModBlocks.WILLOW_SAPLING.get()));                                                         // 1/probability has to be int, error otherwise
 
         register(context, DEAD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEAD_TREE_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.1f,1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.01f,1),
                         ModBlocks.DEAD_TREE_SAPLING.get()));
+
+        register(context, HEDGE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HEDGE_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.05f,1),
+                        Blocks.OAK_SAPLING));
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(DrogasTweaks.MOD_ID, name));
