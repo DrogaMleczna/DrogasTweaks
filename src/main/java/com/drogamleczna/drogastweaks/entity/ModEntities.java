@@ -2,6 +2,7 @@ package com.drogamleczna.drogastweaks.entity;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
+import com.drogamleczna.drogastweaks.entity.custom.LobsterEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +17,9 @@ public class ModEntities {
     public static  final RegistryObject<EntityType<CrabEntity>> CRAB =
             ENTITY_TYPES.register("crab", () -> EntityType.Builder.of(CrabEntity::new, MobCategory.CREATURE)
                     .sized(0.3f,0.3f).build("crab"));
+    public static  final RegistryObject<EntityType<LobsterEntity>> LOBSTER =
+            ENTITY_TYPES.register("lobster", () -> EntityType.Builder.of(LobsterEntity::new, MobCategory.CREATURE)
+                    .sized(0.3f,0.3f).build("lobster"));
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
     }

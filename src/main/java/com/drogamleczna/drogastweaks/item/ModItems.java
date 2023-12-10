@@ -34,6 +34,14 @@ public class ModItems
 
     public static final RegistryObject<Item> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0xC54600, 0xFF8100, new Item.Properties()));
+
+    public static final RegistryObject<Item> LOBSTER_SPAWN_EGG = ITEMS.register("lobster_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LOBSTER, 0x113247, 0x07293f, new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_LOBSTER = ITEMS.register("raw_lobster",
+            () -> new Item(new Item.Properties().food(ModFoods.RAW_LOBSTER)));
+    public static final RegistryObject<Item> COOKED_LOBSTER = ITEMS.register("cooked_lobster",
+            () -> new Item(new Item.Properties().food(ModFoods.COOKED_LOBSTER)));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

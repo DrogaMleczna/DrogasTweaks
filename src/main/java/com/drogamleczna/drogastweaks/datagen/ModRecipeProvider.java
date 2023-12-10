@@ -19,6 +19,7 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     private static final List<ItemLike> CRAB_COOKABLES = List.of(ModItems.CRAB_LEG.get());
+    private static final List<ItemLike> Lobster_COOKABLES = List.of(ModItems.RAW_LOBSTER.get());
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -43,14 +44,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.FLINT_BLOCK.get()), has(ModBlocks.FLINT_BLOCK.get()))
                 .save(pWriter);
 
-        //SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.smoking(, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 150)
-        //        .unlockedBy("criteria", criteria) // How the recipe is unlocked
-        //        .save(pWriter);
         oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");
+        oreSmelting(pWriter, Lobster_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_LOBSTER.get(), 0.25f, 200, "lobster");
 
-        //simpleCookingRecipe(pWriter, "#cooking", (RecipeSerializer<? extends AbstractCookingRecipe>) pWriter, 200, ModItems.CRAB_LEG.get(), ModItems.COOKED_CRAB_LEG.get(), 0.25f);
-
-        //simpleCookingRecipe(pWriter, , , 200F, ModItems.CRAB_LEG, ModItems.COOKED_CRAB_LEG, 0.25f);
 
 
     }

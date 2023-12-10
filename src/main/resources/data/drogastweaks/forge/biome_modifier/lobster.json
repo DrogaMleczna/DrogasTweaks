@@ -1,9 +1,9 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "#minecraft:is_beach",
+  "biomes": "#minecraft:is_ocean",
   "spawners":
   {
-    "type": "drogastweaks:crab",
+    "type": "drogastweaks:lobster",
     "weight": 200,
     "minCount": 3,
     "maxCount": 8

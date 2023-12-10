@@ -4,6 +4,7 @@ import com.drogamleczna.drogastweaks.block.ModBlocks;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.client.CrabRenderer;
+import com.drogamleczna.drogastweaks.entity.client.LobsterRenderer;
 import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
@@ -66,6 +67,7 @@ public class DrogasTweaks {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
+            EntityRenderers.register(ModEntities.LOBSTER.get(), LobsterRenderer::new);
 
         }
     }

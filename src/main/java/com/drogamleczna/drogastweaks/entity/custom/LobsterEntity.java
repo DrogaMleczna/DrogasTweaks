@@ -1,36 +1,34 @@
 package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
-import net.minecraft.client.sounds.SoundEngineExecutor;
+import com.drogamleczna.drogastweaks.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraftforge.event.entity.living.MobSpawnEvent;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
-public class CrabEntity extends Animal {
-    public CrabEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+public class LobsterEntity extends Animal {
+    public LobsterEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -52,7 +50,7 @@ public class CrabEntity extends Animal {
         }else{--this.idleAnimationTimeout;}
     }
 
-    protected boolean canRandomSwim() {
+    public boolean canRandomSwim() {
         return true;
     }
 
@@ -69,12 +67,13 @@ public class CrabEntity extends Animal {
         return true;
     }
 
+
     public boolean isPushedByFluid() {
         return false;
     }
 
     public MobType getMobType() {
-        return MobType.ARTHROPOD;
+        return MobType.WATER;
     }
 
     @Override
@@ -90,21 +89,21 @@ public class CrabEntity extends Animal {
 
     public static AttributeSupplier.Builder createAttributes(){
         return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 3D)
+                .add(Attributes.MAX_HEALTH, 7D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ARMOR, 1D);
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.ARMOR, 2D);
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.CRAB.get().create(pLevel);
+        return ModEntities.LOBSTER.get().create(pLevel);
     }
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return pStack.is(Items.COD);
+        return pStack.is(ItemTags.FISHES) || pStack.is(ModItems.CRAB_LEG.get());
     }
 
     @Nullable
@@ -125,13 +124,13 @@ public class CrabEntity extends Animal {
         return SoundEvents.TURTLE_HURT_BABY;
     }
 
-    public static boolean canSpawn(EntityType<CrabEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
-        return checkCrabSpawnRules(entityType, level, spawnType, position, random);
+    public static boolean canSpawn(EntityType<LobsterEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
+        return checkLobsterSpawnRules(entityType, level, spawnType, position, random);
     }
 
 
-    public static boolean checkCrabSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return pLevel.getBlockState(pPos.below()).is(BlockTags.SAND) && isBrightEnoughToSpawn(pLevel, pPos);
+    public static boolean checkLobsterSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        return pLevel.getBlockState(pPos.below()).is(Blocks.SAND) || pLevel.getBlockState(pPos.below()).is(Blocks.GRAVEL) || pLevel.getBlockState(pPos.below()).is(Blocks.WATER);
     }
 
     @Override
@@ -140,3 +139,4 @@ public class CrabEntity extends Animal {
         return spawngroupdata;
     }
 }
+

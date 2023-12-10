@@ -20,6 +20,11 @@
   "item.drogastweaks.crab_leg": "Crab Leg",
   "item.drogastweaks.cooked_crab_leg": "Cooked Crab Leg",
 
+  "entity.drogastweaks.lobster" : "Lobster",
+  "item.drogastweaks.lobster_spawn_egg": "Lobster Spawn Egg",
+  "item.drogastweaks.raw_lobster": "Raw Lobster",
+  "item.drogastweaks.cooked_lobster": "Cooked Lobster",
+
   "item.drogastweaks.pear": "Pear",
 
   "creativetab.drogas_tab": "Droga's Tweaks"
