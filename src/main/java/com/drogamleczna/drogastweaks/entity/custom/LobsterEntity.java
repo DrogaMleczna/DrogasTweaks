@@ -1,9 +1,14 @@
 package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
+import com.drogamleczna.drogastweaks.entity.variant.LobsterVariant;
 import com.drogamleczna.drogastweaks.item.ModItems;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -23,6 +28,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +39,8 @@ public class LobsterEntity extends Animal {
         super(pEntityType, pLevel);
     }
 
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
+            SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.INT);
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
@@ -95,6 +104,7 @@ public class LobsterEntity extends Animal {
                 .add(Attributes.ARMOR, 2D);
     }
 
+
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
@@ -124,6 +134,24 @@ public class LobsterEntity extends Animal {
         return SoundEvents.TURTLE_HURT_BABY;
     }
 
+    @Override
+    protected void defineSynchedData(){
+        super.defineSynchedData();
+        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag){
+        super.readAdditionalSaveData(tag);
+        this.entityData.set(DATA_ID_TYPE_VARIANT, tag.getInt("Variant"));
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag){
+        super.addAdditionalSaveData(tag);
+        tag.putInt("Variant", this.getTypeVariant());
+    }
+
     public static boolean canSpawn(EntityType<LobsterEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
         return checkLobsterSpawnRules(entityType, level, spawnType, position, random);
     }
@@ -134,9 +162,34 @@ public class LobsterEntity extends Animal {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
+                                        @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+        //if (pLevel.getBiome(this.blockPosition())== Biomes.WARM_OCEAN) {
+        //    setVariant(LobsterVariant.byId(1));
+        //}else{
+        //    setVariant(LobsterVariant.byId(0));
+        //}
+
+        LobsterVariant variant = Util.getRandom(LobsterVariant.values(), this.random);
+        setVariant(variant);
         SpawnGroupData spawngroupdata = super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         return spawngroupdata;
     }
+    /* VARIANTS */
+
+    public LobsterVariant getVariant() {
+        return LobsterVariant.byId(this.getTypeVariant() & 255);
+    }
+
+
+
+    private int getTypeVariant(){
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    private void setVariant(LobsterVariant variant){
+        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
 }
 

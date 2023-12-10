@@ -44,7 +44,7 @@ public class LobsterModel<T extends Entity> extends HierarchicalModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition lobster = partdefinition.addOrReplaceChild("lobster", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition lobster = partdefinition.addOrReplaceChild("lobster", CubeListBuilder.create(), PartPose.offset(0.0F, 23.0F, 0.0F));
 
 		PartDefinition legs = lobster.addOrReplaceChild("legs", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
@@ -72,13 +72,13 @@ public class LobsterModel<T extends Entity> extends HierarchicalModel<T> {
 
 		PartDefinition cube_r6 = right_back.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(15, 4).addBox(-2.3066F, 0.0412F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.3927F));
 
-		PartDefinition claw_right = lobster.addOrReplaceChild("claw_right", CubeListBuilder.create().texOffs(15, 0).addBox(-4.5F, -1.5F, -6.0F, 2.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition claw_right = lobster.addOrReplaceChild("claw_right", CubeListBuilder.create().texOffs(15, 0).addBox(-4.5F, -1.0F, -6.0F, 2.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition cube_r7 = claw_right.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(0, 17).addBox(0.25F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, 0.0F, -2.0F, 0.0F, 0.6109F, 0.0F));
+		PartDefinition cube_r7 = claw_right.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(0, 17).addBox(0.25F, -1.0F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, 0.0F, -2.0F, 0.0F, 0.6109F, 0.0F));
 
-		PartDefinition claw_left = lobster.addOrReplaceChild("claw_left", CubeListBuilder.create().texOffs(15, 14).addBox(2.75F, -1.5F, -6.0F, 2.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition claw_left = lobster.addOrReplaceChild("claw_left", CubeListBuilder.create().texOffs(15, 14).addBox(2.75F, -1.0F, -6.0F, 2.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition cube_r8 = claw_left.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(8, 17).addBox(-1.0F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, 0.0F, -2.0F, 0.0F, -0.7418F, 0.0F));
+		PartDefinition cube_r8 = claw_left.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(8, 17).addBox(-1.0F, -1.0F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, 0.0F, -2.0F, 0.0F, -0.7418F, 0.0F));
 
 		PartDefinition fin = lobster.addOrReplaceChild("fin", CubeListBuilder.create().texOffs(12, 9).addBox(-3.0F, -1.0F, 1.0F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 				.texOffs(12, 12).addBox(-2.0F, -1.0F, 0.0F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 9.0F));
