@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:allows_surface_slime_spawns",
-  "features": "drogastweaks:willow_placed",
-  "step": "vegetal_decoration"
-}

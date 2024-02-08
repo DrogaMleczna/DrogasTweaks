@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "drogastweaks:item/raw_lobster"
-  }
-}
