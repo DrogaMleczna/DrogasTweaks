@@ -1,0 +1,29 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:desert",
+  "spawners":
+  {
+    "type": "drogastweaks:scorpion",
+    "weight": 200,
+    "minCount": 1,
+    "maxCount": 5
+  },
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:jungle",
+  "spawners":
+  {
+    "type": "drogastweaks:scorpion",
+    "weight": 200,
+    "minCount": 1,
+    "maxCount": 3
+  },
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:sparse_jungle",
+  "spawners":
+  {
+    "type": "drogastweaks:scorpion",
+    "weight": 200,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

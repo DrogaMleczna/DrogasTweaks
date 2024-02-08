@@ -9,4 +9,8 @@ public class ModModelLayers {
             new ResourceLocation(DrogasTweaks.MOD_ID, "crab_layer"), "main");
     public static final ModelLayerLocation LOBSTER_LAYER = new ModelLayerLocation(
             new ResourceLocation(DrogasTweaks.MOD_ID, "lobster_layer"), "main");
+
+    public static final ModelLayerLocation SCORPION_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DrogasTweaks.MOD_ID, "scorpion_layer"), "main");
+
 }

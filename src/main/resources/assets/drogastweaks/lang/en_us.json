@@ -27,5 +27,8 @@
 
   "item.drogastweaks.pear": "Pear",
 
+  "entity.drogastweaks.scorpion" : "Scorpion",
+  "item.drogastweaks.scorpion_spawn_egg": "Scorpion Spawn Egg",
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

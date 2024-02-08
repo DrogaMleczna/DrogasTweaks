@@ -1,0 +1,17 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 3,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:diamond_block"
+        }
+      ]
+    }
+  ]
+}

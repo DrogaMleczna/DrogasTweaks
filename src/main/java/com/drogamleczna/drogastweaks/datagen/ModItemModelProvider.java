@@ -41,6 +41,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.COOKED_LOBSTER);
         withExistingParent(ModItems.LOBSTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+        withExistingParent(ModItems.SCORPION_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         saplingItem(ModBlocks.WILLOW_SAPLING);
 
         saplingItem(ModBlocks.DEAD_TREE_SAPLING);

@@ -1,8 +1,12 @@
-// 1.20.1	2023-12-04T18:05:17.5952311	Item Models: drogastweaks
+// 1.20.1	2024-02-08T17:59:44.2627661	Item Models: drogastweaks
 b4adb3ea4341717b7e49e7e3db4d79a56d71f97d assets/drogastweaks/models/item/baton.json
 6aa973e6317f932f78483ba050a050dcb101e505 assets/drogastweaks/models/item/cooked_crab_leg.json
+ea903e32f84f9e0147d33d1cac690afbfb84e496 assets/drogastweaks/models/item/cooked_lobster.json
 7910f67b2d71592c13729f840f12e603de36820d assets/drogastweaks/models/item/crab_leg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/drogastweaks/models/item/crab_spawn_egg.json
 604605fd47f40ac4f2d44971af5047c2e003a9d5 assets/drogastweaks/models/item/dead_tree_sapling.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/drogastweaks/models/item/lobster_spawn_egg.json
 a16db336642fca48aea04b2369f7123770c02b94 assets/drogastweaks/models/item/pear.json
+803c52c0e94339517a04571589eaf8edd45b99ba assets/drogastweaks/models/item/raw_lobster.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/drogastweaks/models/item/scorpion_spawn_egg.json
 b9d4a241bfa8f3a4f452d8270966d1acc6ceff81 assets/drogastweaks/models/item/willow_sapling.json

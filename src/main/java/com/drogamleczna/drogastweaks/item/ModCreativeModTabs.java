@@ -29,6 +29,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.RAW_LOBSTER.get());
                         pOutput.accept(ModItems.COOKED_LOBSTER.get());
 
+                        pOutput.accept(ModItems.SCORPION_SPAWN_EGG.get());
+
                         pOutput.accept(ModItems.PEAR.get());
 
                         pOutput.accept(ModBlocks.WILLOW_LEAVES.get());

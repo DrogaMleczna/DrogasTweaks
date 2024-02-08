@@ -5,15 +5,12 @@ import com.drogamleczna.drogastweaks.block.ModBlocks;
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.client.CrabRenderer;
 import com.drogamleczna.drogastweaks.entity.client.LobsterRenderer;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
+import com.drogamleczna.drogastweaks.entity.client.ScorpionRenderer;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.worldgen.tree.ModFoliagePlacers;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -68,6 +65,7 @@ public class DrogasTweaks {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
             EntityRenderers.register(ModEntities.LOBSTER.get(), LobsterRenderer::new);
+            EntityRenderers.register(ModEntities.SCORPION.get(), ScorpionRenderer::new);
 
         }
     }
