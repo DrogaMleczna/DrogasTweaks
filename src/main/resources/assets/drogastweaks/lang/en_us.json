@@ -29,6 +29,10 @@
 
   "entity.drogastweaks.scorpion" : "Scorpion",
   "item.drogastweaks.scorpion_spawn_egg": "Scorpion Spawn Egg",
+  "item.drogastweaks.stinger": "Scorpion Stinger",
+
+  "tooltip.drogastweaks.stinger_on_a_stick.tooltip": "The dev has run out of ideas at this point",
+  "item.drogastweaks.stinger_on_a_stick": "Stinger On A Stick",
 
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

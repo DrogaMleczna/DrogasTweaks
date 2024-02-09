@@ -25,7 +25,6 @@ public class ScorpionAttackGoal extends MeleeAttackGoal {
         secsUntilNextAttack = 0.75f;
     }
 
-    long starttime = 0;
     @Override
     protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
         if (isEnemyWithinAttackDistance(pEnemy, pDistToEnemySqr)) {
@@ -33,17 +32,11 @@ public class ScorpionAttackGoal extends MeleeAttackGoal {
 
             if(isTimeToStartAttackAnimation()) {
                 entity.setAttacking(true);
-                System.out.println("starting attack");
-                starttime = System.currentTimeMillis();
             }
 
             if(isTimeToAttack()) {
                 this.mob.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getEyeY(), pEnemy.getZ());
                 performAttack(pEnemy);
-                long finishtime = System.currentTimeMillis();
-                long duration = starttime - finishtime;
-                System.out.println("attacking");
-                System.out.println(duration);
             }
         } else {
             resetAttackCooldown();

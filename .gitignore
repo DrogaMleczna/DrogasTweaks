@@ -27,9 +27,5 @@ forge*changelog.txt
 # misc files
 build
 run
-src\generated
+src/generated
 run-data
-src/generated/resources/.cache/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e
-src/generated/resources/.cache/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e
-src/generated/resources/.cache/95ea8563b531a790b3417876f1b94675af9ef10d
-src/generated/resources/.cache/103d9f3f36b01595f1aa5172191e60eff02e6924

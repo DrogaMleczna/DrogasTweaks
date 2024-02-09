@@ -3,6 +3,7 @@ package com.drogamleczna.drogastweaks.item;
 import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.item.custom.ModFoods;
+import com.drogamleczna.drogastweaks.item.custom.StingerStickItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -45,6 +46,12 @@ public class ModItems
 
     public static final RegistryObject<Item> SCORPION_SPAWN_EGG = ITEMS.register("scorpion_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SCORPION, 0xb27e19, 0x79530a, new Item.Properties()));
+
+    public static final RegistryObject<Item> STINGER = ITEMS.register("stinger",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STINGER_ON_A_STICK = ITEMS.register("stinger_on_a_stick",
+            () -> new StingerStickItem(WOOD, 5, -3,
+                    new Item.Properties().durability(128)));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

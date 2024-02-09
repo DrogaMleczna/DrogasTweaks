@@ -104,7 +104,7 @@ public class ScorpionEntity extends Animal {
                 .add(Attributes.MAX_HEALTH, 4.0D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
                 .add(Attributes.FOLLOW_RANGE, 24D)
-                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.25f);
     }
 

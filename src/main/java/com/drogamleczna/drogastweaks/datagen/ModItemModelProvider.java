@@ -30,6 +30,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.BATON);
+        simpleItem(ModItems.STINGER);
+        simpleItem(ModItems.STINGER_ON_A_STICK);
 
         simpleItem(ModItems.PEAR);
 

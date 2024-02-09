@@ -43,6 +43,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.FLINT_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.FLINT_BLOCK.get()), has(ModBlocks.FLINT_BLOCK.get()))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.STINGER_ON_A_STICK.get())
+                .requires(ModItems.STINGER.get(), 1)
+                .requires(ModItems.BATON.get())
+                .unlockedBy(getItemName(ModItems.STINGER.get()), has(ModItems.BATON.get()))
+                .save(pWriter);
 
         oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");
         oreSmelting(pWriter, Lobster_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_LOBSTER.get(), 0.25f, 200, "lobster");
