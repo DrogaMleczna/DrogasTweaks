@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "drogastweaks:block/willow_log_top",
-    "side": "drogastweaks:block/willow_log"
-  }
-}
