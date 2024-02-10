@@ -1,10 +1,10 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "#minecraft:is_ocean",
+  "biomes": ["minecraft:ocean", "minecraft:cold_ocean", "minecraft:deep_ocean", "minecraft:warm_ocean", "minecraft:lukewarm_ocean"],
   "spawners":
   {
     "type": "drogastweaks:lobster",
-    "weight": 200,
+    "weight": 10,
     "minCount": 3,
     "maxCount": 8
   }

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:nautilus_shell"
+    },
+    "title": "Salination",
+    "description": "Craft a nautilus shell from a snail shell",
+    "show_toast": false,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "drogastweaks:default",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minecraft:nautilus_shell"
+      }
+    }
+  }
+}

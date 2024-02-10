@@ -20,7 +20,23 @@
   "item.drogastweaks.crab_leg": "Noga Kraba",
   "item.drogastweaks.cooked_crab_leg": "Pieczona Noga Kraba",
 
+  "entity.drogastweaks.lobster" : "Homar",
+  "item.drogastweaks.lobster_spawn_egg": "Jajo Przyzywające Homara",
+  "item.drogastweaks.raw_lobster": "Surowy Homar",
+  "item.drogastweaks.cooked_lobster": "Pieczony Homar",
+
   "item.drogastweaks.pear": "Gruszka",
+
+  "entity.drogastweaks.scorpion" : "Skorpion",
+  "item.drogastweaks.scorpion_spawn_egg": "Jajo Przyzywające Skorpiona",
+  "item.drogastweaks.stinger": "Żądło Skorpiona",
+
+  "tooltip.drogastweaks.stinger_on_a_stick.tooltip": "Deweloperowi skończyły się pomysły",
+  "item.drogastweaks.stinger_on_a_stick": "Żądło na patyku",
+
+  "entity.drogastweaks.snail": "Ślimak",
+  "item.drogastweaks.snail_spawn_egg": "Jajo Przyzywające Ślimaka",
+  "item.drogastweaks.snail_shell": "Muszla Ślimaka",
 
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

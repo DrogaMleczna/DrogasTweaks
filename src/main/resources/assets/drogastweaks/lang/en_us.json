@@ -34,5 +34,9 @@
   "tooltip.drogastweaks.stinger_on_a_stick.tooltip": "The dev has run out of ideas at this point",
   "item.drogastweaks.stinger_on_a_stick": "Stinger On A Stick",
 
+  "entity.drogastweaks.snail": "Snail",
+  "item.drogastweaks.snail_spawn_egg": "Snail Spawn Egg",
+  "item.drogastweaks.snail_shell": "Snail Shell",
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

@@ -12,6 +12,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
@@ -31,6 +32,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
@@ -92,7 +94,8 @@ public class LobsterEntity extends Animal {
         this.goalSelector.addGoal(2, new TemptGoal(this,1.0D, Ingredient.of(Items.COD), false));
         this.goalSelector.addGoal(3, new FollowParentGoal(this,1.0D));
         this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8D));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1D, 1));
+        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 
     }
 
@@ -100,7 +103,7 @@ public class LobsterEntity extends Animal {
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 7D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
-                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.MOVEMENT_SPEED, 0.15D)
                 .add(Attributes.ARMOR, 2D);
     }
 
@@ -164,14 +167,14 @@ public class LobsterEntity extends Animal {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
                                         @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        //if (pLevel.getBiome(this.blockPosition())== Biomes.WARM_OCEAN) {
-        //    setVariant(LobsterVariant.byId(1));
-        //}else{
-        //    setVariant(LobsterVariant.byId(0));
-        //}
+        if (pLevel.getBiome(this.blockPosition()).is(Biomes.WARM_OCEAN)) {
+            setVariant(LobsterVariant.BLUE);
+        }else{
+            setVariant(LobsterVariant.DEFAULT);
+        }
 
-        LobsterVariant variant = Util.getRandom(LobsterVariant.values(), this.random);
-        setVariant(variant);
+        //LobsterVariant variant = Util.getRandom(LobsterVariant.values(), this.random);
+        //setVariant(variant);
         SpawnGroupData spawngroupdata = super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         return spawngroupdata;
     }

@@ -11,6 +11,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fml.common.Mod;
 
@@ -48,6 +49,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.BATON.get())
                 .unlockedBy(getItemName(ModItems.STINGER.get()), has(ModItems.BATON.get()))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 1)
+                .requires(ModItems.SNAIL_SHELL.get())
+                .unlockedBy(getHasName(ModItems.SNAIL_SHELL.get()), has(ModItems.SNAIL_SHELL.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.NAUTILUS_SHELL, 1)
+                .requires(ModItems.SNAIL_SHELL.get())
+                .requires(Items.WATER_BUCKET)
+                .unlockedBy(getHasName(ModItems.SNAIL_SHELL.get()), has(ModItems.SNAIL_SHELL.get()))
+                .unlockedBy(getHasName(Items.NAUTILUS_SHELL), has(Items.NAUTILUS_SHELL))
+                .save(pWriter);
+
 
         oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");
         oreSmelting(pWriter, Lobster_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_LOBSTER.get(), 0.25f, 200, "lobster");

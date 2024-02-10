@@ -42,6 +42,8 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.STINGER.get());
 
+                        pOutput.accept(ModItems.SNAIL_SHELL.get());
+
                         pOutput.accept(ModItems.PEAR.get());
 
                         pOutput.accept(ModBlocks.FLINT_BLOCK.get());
@@ -49,6 +51,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SCORPION_SPAWN_EGG.get());
                         pOutput.accept(ModItems.CRAB_SPAWN_EGG.get());
                         pOutput.accept(ModItems.LOBSTER_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
 
 
                     })

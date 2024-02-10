@@ -6,13 +6,23 @@ import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.client.CrabRenderer;
 import com.drogamleczna.drogastweaks.entity.client.LobsterRenderer;
 import com.drogamleczna.drogastweaks.entity.client.ScorpionRenderer;
+import com.drogamleczna.drogastweaks.entity.client.SnailRenderer;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
+import com.drogamleczna.drogastweaks.util.ModPotionBrewing;
 import com.drogamleczna.drogastweaks.worldgen.tree.ModFoliagePlacers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.brewing.IBrewingRecipe;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +33,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(DrogasTweaks.MOD_ID)
 public class DrogasTweaks {
     public static final String MOD_ID = "drogastweaks";
@@ -39,26 +48,15 @@ public class DrogasTweaks {
         ModFoliagePlacers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        BrewingRecipeRegistry.addRecipe(new ModPotionBrewing(Potions.AWKWARD, ModItems.STINGER.get(), Potions.POISON));
 
 
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
-    }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
@@ -66,6 +64,7 @@ public class DrogasTweaks {
             EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
             EntityRenderers.register(ModEntities.LOBSTER.get(), LobsterRenderer::new);
             EntityRenderers.register(ModEntities.SCORPION.get(), ScorpionRenderer::new);
+            EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
 
         }
     }

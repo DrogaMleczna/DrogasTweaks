@@ -1,0 +1,22 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "drogastweaks:snail_shell"
+        },
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:slime_ball"
+        }
+      ]
+    }
+  ]
+}

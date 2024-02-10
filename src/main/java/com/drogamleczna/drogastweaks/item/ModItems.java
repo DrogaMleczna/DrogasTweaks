@@ -52,6 +52,12 @@ public class ModItems
     public static final RegistryObject<Item> STINGER_ON_A_STICK = ITEMS.register("stinger_on_a_stick",
             () -> new StingerStickItem(WOOD, 5, -3,
                     new Item.Properties().durability(128)));
+
+    public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SNAIL, 0x757b57, 0x6b5139, new Item.Properties()));
+
+    public static final RegistryObject<Item> SNAIL_SHELL = ITEMS.register("snail_shell",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

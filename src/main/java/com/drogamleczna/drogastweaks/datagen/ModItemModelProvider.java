@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
@@ -29,9 +30,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.BATON);
+        handheldItem(ModItems.BATON);
         simpleItem(ModItems.STINGER);
-        simpleItem(ModItems.STINGER_ON_A_STICK);
+        handheldItem(ModItems.STINGER_ON_A_STICK);
 
         simpleItem(ModItems.PEAR);
 
@@ -44,6 +45,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.LOBSTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCORPION_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        withExistingParent(ModItems.SNAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        simpleItem(ModItems.SNAIL_SHELL);
 
         saplingItem(ModBlocks.WILLOW_SAPLING);
 
@@ -60,6 +64,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(DrogasTweaks.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(DrogasTweaks.MOD_ID, "item/" + item.getId().getPath()));
     }
 

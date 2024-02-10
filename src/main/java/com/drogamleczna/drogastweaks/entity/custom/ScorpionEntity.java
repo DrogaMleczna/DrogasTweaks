@@ -28,6 +28,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
 
 public class ScorpionEntity extends Animal {
@@ -138,12 +139,13 @@ public class ScorpionEntity extends Animal {
     }
 
     public static boolean canSpawn(EntityType<ScorpionEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
-        return checkScorpionSpawnRules(entityType, level, spawnType, position, random);
+         return checkScorpionSpawnRules(entityType, level, spawnType, position, random);
     }
 
 
     public static boolean checkScorpionSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return pLevel.getBlockState(pPos.below()).is(BlockTags.SAND) || pLevel.getBlockState(pPos.below()).is(BlockTags.DIRT);
+        return pLevel.getBlockState(pPos.below()).is(Blocks.GRASS_BLOCK) || pLevel.getBlockState(pPos.below()).is(Blocks.GRASS) ||
+                pLevel.getBlockState(pPos.below()).is(Blocks.SAND) || pLevel.getBlockState(pPos.below()).is(Blocks.VINE);
     }
 
     @Override

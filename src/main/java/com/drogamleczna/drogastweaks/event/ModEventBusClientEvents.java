@@ -2,10 +2,7 @@ package com.drogamleczna.drogastweaks.event;
 
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.entity.client.CrabModel;
-import com.drogamleczna.drogastweaks.entity.client.LobsterModel;
-import com.drogamleczna.drogastweaks.entity.client.ModModelLayers;
-import com.drogamleczna.drogastweaks.entity.client.ScorpionModel;
+import com.drogamleczna.drogastweaks.entity.client.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +15,7 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.CRAB_LAYER, CrabModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.LOBSTER_LAYER, LobsterModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCORPION_LAYER, ScorpionModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SNAIL_LAYER, SnailModel::createBodyLayer);
     }
 
 }
