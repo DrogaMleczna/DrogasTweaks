@@ -2,6 +2,8 @@ package com.drogamleczna.drogastweaks.entity.ai;
 
 import com.drogamleczna.drogastweaks.entity.custom.ScorpionEntity;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -71,6 +73,7 @@ public class ScorpionAttackGoal extends MeleeAttackGoal {
         this.resetAttackCooldown();
         this.mob.swing(InteractionHand.MAIN_HAND);
         this.mob.doHurtTarget(pEnemy);
+        pEnemy.addEffect(new MobEffectInstance(MobEffects.POISON, 60));
     }
 
     @Override

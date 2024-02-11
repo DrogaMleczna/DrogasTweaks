@@ -18,18 +18,18 @@ public class ModEntities {
 
     public static  final RegistryObject<EntityType<CrabEntity>> CRAB =
             ENTITY_TYPES.register("crab", () -> EntityType.Builder.of(CrabEntity::new, MobCategory.CREATURE)
-                    .sized(0.3f,0.3f).build("crab"));
+                    .sized(0.35f,0.35f).build("crab"));
     public static  final RegistryObject<EntityType<LobsterEntity>> LOBSTER =
             ENTITY_TYPES.register("lobster", () -> EntityType.Builder.of(LobsterEntity::new, MobCategory.CREATURE)
-                    .sized(0.3f,0.3f).build("lobster"));
+                    .sized(0.4f,0.3f).build("lobster"));
 
     public static  final RegistryObject<EntityType<ScorpionEntity>> SCORPION =
             ENTITY_TYPES.register("scorpion", () -> EntityType.Builder.of(ScorpionEntity::new, MobCategory.CREATURE)
-                    .sized(0.3f,0.3f).build("scorpion"));
+                    .sized(0.4f,0.3f).build("scorpion"));
 
     public static  final RegistryObject<EntityType<SnailEntity>> SNAIL =
             ENTITY_TYPES.register("snail", () -> EntityType.Builder.of(SnailEntity::new, MobCategory.CREATURE)
-                    .sized(0.3f,0.3f).build("snail"));
+                    .sized(0.2f,0.3f).build("snail"));
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
     }

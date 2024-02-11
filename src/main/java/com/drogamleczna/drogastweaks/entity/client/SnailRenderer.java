@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SnailRenderer extends MobRenderer<SnailEntity, SnailModel<SnailEntity>> {
     public SnailRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new SnailModel<>(pContext.bakeLayer(ModModelLayers.SNAIL_LAYER)), 0.25f);
+        super(pContext, new SnailModel<>(pContext.bakeLayer(ModModelLayers.SNAIL_LAYER)), 0.1f);
     }
 
     @Override

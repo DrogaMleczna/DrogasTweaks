@@ -36,6 +36,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.PEAR);
 
+        simpleItem(ModItems.RUBY);
+
         simpleItem(ModItems.CRAB_LEG);
         simpleItem(ModItems.COOKED_CRAB_LEG);
         withExistingParent(ModItems.CRAB_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

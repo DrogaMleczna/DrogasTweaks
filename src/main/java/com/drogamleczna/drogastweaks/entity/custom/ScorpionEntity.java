@@ -145,7 +145,8 @@ public class ScorpionEntity extends Animal {
 
     public static boolean checkScorpionSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
         return pLevel.getBlockState(pPos.below()).is(Blocks.GRASS_BLOCK) || pLevel.getBlockState(pPos.below()).is(Blocks.GRASS) ||
-                pLevel.getBlockState(pPos.below()).is(Blocks.SAND) || pLevel.getBlockState(pPos.below()).is(Blocks.VINE);
+                pLevel.getBlockState(pPos.below()).is(Blocks.SAND) || pLevel.getBlockState(pPos.below()).is(Blocks.VINE) ||
+                pLevel.getBlockState(pPos.below()).is(Blocks.RED_SAND) || pLevel.getBlockState(pPos.below()).is(Blocks.TERRACOTTA);
     }
 
     @Override
