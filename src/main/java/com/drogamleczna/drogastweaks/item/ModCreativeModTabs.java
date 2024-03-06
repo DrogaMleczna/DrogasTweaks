@@ -52,6 +52,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.CRAB_SPAWN_EGG.get());
                         pOutput.accept(ModItems.LOBSTER_SPAWN_EGG.get());
                         pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.OWL_SPAWN_EGG.get());
 
 
                     })

@@ -16,4 +16,7 @@ public class ModModelLayers {
     public static final ModelLayerLocation SNAIL_LAYER = new ModelLayerLocation(
             new ResourceLocation(DrogasTweaks.MOD_ID, "snail_layer"), "main");
 
+    public static final ModelLayerLocation OWL_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DrogasTweaks.MOD_ID, "owl_layer"), "main");
+
 }

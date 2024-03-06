@@ -1,10 +1,7 @@
 package com.drogamleczna.drogastweaks.entity;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
-import com.drogamleczna.drogastweaks.entity.custom.LobsterEntity;
-import com.drogamleczna.drogastweaks.entity.custom.ScorpionEntity;
-import com.drogamleczna.drogastweaks.entity.custom.SnailEntity;
+import com.drogamleczna.drogastweaks.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,6 +27,10 @@ public class ModEntities {
     public static  final RegistryObject<EntityType<SnailEntity>> SNAIL =
             ENTITY_TYPES.register("snail", () -> EntityType.Builder.of(SnailEntity::new, MobCategory.CREATURE)
                     .sized(0.2f,0.3f).build("snail"));
+
+    public static  final RegistryObject<EntityType<OwlEntity>> OWL =
+            ENTITY_TYPES.register("owl", () -> EntityType.Builder.of(OwlEntity::new, MobCategory.CREATURE)
+                    .sized(0.35f,0.8f).build("owl"));
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
     }

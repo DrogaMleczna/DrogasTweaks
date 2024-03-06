@@ -38,5 +38,8 @@
   "item.drogastweaks.snail_spawn_egg": "Jajo Przyzywające Ślimaka",
   "item.drogastweaks.snail_shell": "Muszla Ślimaka",
 
+  "item.drogastweaks.owl_spawn_egg": "Jajo przyzywające Sowy",
+  "entity.drogastweaks.owl" : "Sowa",
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

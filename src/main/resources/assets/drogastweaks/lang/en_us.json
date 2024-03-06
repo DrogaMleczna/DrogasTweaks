@@ -38,5 +38,8 @@
   "item.drogastweaks.snail_spawn_egg": "Snail Spawn Egg",
   "item.drogastweaks.snail_shell": "Snail Shell",
 
+  "item.drogastweaks.owl_spawn_egg": "Owl Spawn Egg",
+  "entity.drogastweaks.owl" : "Owl",
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

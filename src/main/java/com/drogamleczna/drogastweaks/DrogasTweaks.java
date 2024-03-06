@@ -3,10 +3,7 @@ package com.drogamleczna.drogastweaks;
 import com.drogamleczna.drogastweaks.block.ModBlocks;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
-import com.drogamleczna.drogastweaks.entity.client.CrabRenderer;
-import com.drogamleczna.drogastweaks.entity.client.LobsterRenderer;
-import com.drogamleczna.drogastweaks.entity.client.ScorpionRenderer;
-import com.drogamleczna.drogastweaks.entity.client.SnailRenderer;
+import com.drogamleczna.drogastweaks.entity.client.*;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.util.ModPotionBrewing;
@@ -65,6 +62,7 @@ public class DrogasTweaks {
             EntityRenderers.register(ModEntities.LOBSTER.get(), LobsterRenderer::new);
             EntityRenderers.register(ModEntities.SCORPION.get(), ScorpionRenderer::new);
             EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
+            EntityRenderers.register(ModEntities.OWL.get(), OwlRenderer::new);
 
         }
     }

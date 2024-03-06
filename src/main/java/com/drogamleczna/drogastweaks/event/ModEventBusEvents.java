@@ -2,10 +2,7 @@ package com.drogamleczna.drogastweaks.event;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.entity.ModEntities;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
-import com.drogamleczna.drogastweaks.entity.custom.LobsterEntity;
-import com.drogamleczna.drogastweaks.entity.custom.ScorpionEntity;
-import com.drogamleczna.drogastweaks.entity.custom.SnailEntity;
+import com.drogamleczna.drogastweaks.entity.custom.*;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -22,6 +19,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.LOBSTER.get(), LobsterEntity.createAttributes().build());
         event.put(ModEntities.SCORPION.get(), ScorpionEntity.createAttributes().build());
         event.put(ModEntities.SNAIL.get(), SnailEntity.createAttributes().build());
+        event.put(ModEntities.OWL.get(), OwlEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -30,6 +28,7 @@ public class ModEventBusEvents {
         event.register(ModEntities.LOBSTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.OCEAN_FLOOR, LobsterEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(ModEntities.SCORPION.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, ScorpionEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(ModEntities.SNAIL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, SnailEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(ModEntities.OWL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, OwlEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
 
     }
 }
