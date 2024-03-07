@@ -15,15 +15,17 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Entity;
 
 public class CrabModel<T extends Entity> extends HierarchicalModel<T> {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+
 	private final ModelPart crab;
-	private final ModelPart claw_left;
-	private final ModelPart claw_right;
+	private final ModelPart body;
+	private final ModelPart legs;
+	private final ModelPart claws;
 
 	public CrabModel(ModelPart root) {
 		this.crab = root.getChild("crab");
-		this.claw_left = root.getChild("crab").getChild("claw_left");
-		this.claw_right = root.getChild("crab").getChild("claw_right");
+		this.body = crab.getChild("body");
+		this.claws = crab.getChild("claws");
+		this.legs = crab.getChild("legs");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -32,40 +34,47 @@ public class CrabModel<T extends Entity> extends HierarchicalModel<T> {
 
 		PartDefinition crab = partdefinition.addOrReplaceChild("crab", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition carpace = crab.addOrReplaceChild("carpace", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition body = crab.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -4.0F, -1.0F, 6.0F, 3.0F, 4.0F, new CubeDeformation(0.0F))
+				.texOffs(18, 12).addBox(-2.0F, -5.0F, -1.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(14, 12).addBox(1.0F, -5.0F, -1.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition cube_r1 = carpace.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 7).addBox(-2.0F, -4.0F, -2.0F, 4.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(16, 13).addBox(-2.0F, -4.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(16, 16).addBox(1.0F, -4.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(0, 0).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -3.1416F, 0.0F, 3.1416F));
+		PartDefinition legs = crab.addOrReplaceChild("legs", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition claw_right = crab.addOrReplaceChild("claw_right", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition left = legs.addOrReplaceChild("left", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition cube_r2 = claw_right.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(13, 15).addBox(0.4617F, 0.0F, -0.113F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(6, 11).addBox(1.4617F, -1.0F, -0.113F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -2.0F, -2.0F, -3.1416F, 0.48F, 3.1416F));
+		PartDefinition l1 = left.addOrReplaceChild("l1", CubeListBuilder.create(), PartPose.offset(3.0F, -2.0F, 0.0F));
 
-		PartDefinition lg3 = crab.addOrReplaceChild("lg3", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition cube_r1 = l1.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 10).addBox(0.0F, 0.0F, -1.0F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.2182F, 0.3491F));
 
-		PartDefinition cube_r3 = lg3.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 0).addBox(-0.2257F, -0.9182F, -0.0937F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -2.0F, 3.0F, 2.7578F, 0.2129F, 2.0529F));
+		PartDefinition l2 = left.addOrReplaceChild("l2", CubeListBuilder.create(), PartPose.offset(3.0F, -2.0F, 1.0F));
 
-		PartDefinition cube_r4 = lg3.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 15).addBox(-0.734F, -0.8484F, -0.0603F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -2.0F, 3.0F, 2.8362F, -0.1719F, -2.0679F));
+		PartDefinition cube_r2 = l2.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(16, 7).addBox(0.0F, 0.0F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.3491F));
 
-		PartDefinition lg2 = crab.addOrReplaceChild("lg2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition l3 = left.addOrReplaceChild("l3", CubeListBuilder.create(), PartPose.offset(3.0F, -2.0F, 2.0F));
 
-		PartDefinition cube_r5 = lg2.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(9, 14).addBox(-0.563F, -0.5522F, 0.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -2.0F, 1.0F, 3.1416F, 0.0F, -2.0944F));
+		PartDefinition cube_r3 = l3.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(8, 7).addBox(0.0F, 0.0F, 0.0F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, -0.2182F, 0.3491F));
 
-		PartDefinition cube_r6 = lg2.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(5, 14).addBox(-0.437F, -0.5522F, 0.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -2.0F, 1.0F, -3.1416F, 0.0F, 2.0944F));
+		PartDefinition right = legs.addOrReplaceChild("right", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition lg1 = crab.addOrReplaceChild("lg1", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition r1 = right.addOrReplaceChild("r1", CubeListBuilder.create(), PartPose.offset(-3.0F, -2.0F, 0.0F));
 
-		PartDefinition cube_r7 = lg1.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(14, 7).addBox(-0.4051F, -0.2488F, -0.0603F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -2.0F, -1.0F, -2.8293F, 0.1586F, -2.0257F));
+		PartDefinition cube_r4 = r1.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 12).addBox(-3.0F, 0.0F, -1.0F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, -0.2182F, -0.3491F));
 
-		PartDefinition cube_r8 = lg1.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(12, 11).addBox(-0.6321F, -0.1337F, -0.113F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -2.0F, -1.0F, -2.7008F, -0.1964F, 1.963F));
+		PartDefinition r2 = right.addOrReplaceChild("r2", CubeListBuilder.create(), PartPose.offset(-3.0F, -2.0F, 1.0F));
 
-		PartDefinition claw_left = crab.addOrReplaceChild("claw_left", CubeListBuilder.create(), PartPose.offset(2.0F, -1.0F, 0.0F));
+		PartDefinition cube_r5 = r2.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(16, 10).addBox(-3.0F, 0.0F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.3491F));
 
-		PartDefinition cube_r9 = claw_left.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(0, 11).addBox(-0.2358F, -1.0F, 0.9635F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
-				.texOffs(16, 11).addBox(-0.2358F, 0.0F, -0.0365F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.0F, -1.0F, -2.0F, -3.1416F, 1.0908F, 3.1416F));
+		PartDefinition r3 = right.addOrReplaceChild("r3", CubeListBuilder.create(), PartPose.offset(-3.0F, -2.0F, 2.0F));
+
+		PartDefinition cube_r6 = r3.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(8, 10).addBox(-3.0F, 0.0F, 0.0F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.2182F, -0.3491F));
+
+		PartDefinition claws = crab.addOrReplaceChild("claws", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition left2 = claws.addOrReplaceChild("left2", CubeListBuilder.create().texOffs(0, 15).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 7).addBox(-4.0F, -1.0F, -1.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -2.0F, -1.0F, 0.0F, -0.5672F, 0.0F));
+
+		PartDefinition right2 = claws.addOrReplaceChild("right2", CubeListBuilder.create().texOffs(8, 12).addBox(1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(4, 15).addBox(0.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -2.0F, -1.0F, 0.0F, 0.5672F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
@@ -75,6 +84,7 @@ public class CrabModel<T extends Entity> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.animateWalk(ModAnimationDefinitions.CRAB_WALK, limbSwing, limbSwingAmount, 10f, 5f);
 		this.animate(((CrabEntity) entity).idleAnimationState, ModAnimationDefinitions.CRAB_IDLE, ageInTicks, 1f);
+
 	}
 
 	@Override

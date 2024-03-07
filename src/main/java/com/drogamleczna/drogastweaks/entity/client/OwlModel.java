@@ -102,7 +102,7 @@ public class OwlModel<T extends Entity> extends HierarchicalModel<T> {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.animateWalk(ModAnimationDefinitions.OWL_WALK, limbSwing, limbSwingAmount, 10f, 5f);
         this.animate(((OwlEntity) entity).idleAnimationState, ModAnimationDefinitions.OWL_IDLE, ageInTicks, 1f);
-        this.animate(((OwlEntity) entity).flyAnimationState, ModAnimationDefinitions.OWL_FLIGHT, ageInTicks, 1f);
+        this.animate(((OwlEntity) entity).flyAnimationState, ModAnimationDefinitions.OWL_FLIGHT_ALT, ageInTicks, 1f);
         this.animate(((OwlEntity) entity).flyTransitionState, ModAnimationDefinitions.OWL_FLIGHT_TRANSITION, ageInTicks, 1f);
     }
 

@@ -1,6 +1,7 @@
 package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
+import com.drogamleczna.drogastweaks.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -157,7 +158,7 @@ public class OwlEntity extends Animal implements FlyingAnimal {
     }
 
     protected void onFlap() {
-        this.playSound(SoundEvents.PARROT_FLY, 0.15F, 1.0F);
+        this.playSound(SoundEvents.PARROT_FLY, 0.15F, 0.6F);
         this.nextFlap = this.flyDist + this.flapSpeed / 2.0F;
     }
 
@@ -213,26 +214,26 @@ public class OwlEntity extends Animal implements FlyingAnimal {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return pStack.is(Items.COD);
+        return pStack.is(Items.BEEF);
     }
 
 
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.PARROT_AMBIENT;
+        return ModSounds.OWL_HOOT.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.PARROT_DEATH;
+        return ModSounds.OWL_DEATH.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.PARROT_HURT;
+        return ModSounds.OWL_HURT.get();
     }
 
 
