@@ -1,6 +1,7 @@
 package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
+import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -168,8 +169,8 @@ public class OwlEntity extends Animal implements FlyingAnimal {
     }
 
     static class OwlWanderGoal extends WaterAvoidingRandomFlyingGoal {
-        public OwlWanderGoal(PathfinderMob p_186224_, double p_186225_) {
-            super(p_186224_, p_186225_);
+        public OwlWanderGoal(PathfinderMob pMob, double pModifier) {
+            super(pMob, pModifier);
         }
 
         @javax.annotation.Nullable
@@ -214,7 +215,7 @@ public class OwlEntity extends Animal implements FlyingAnimal {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return pStack.is(Items.BEEF);
+        return pStack.is(ModItems.RAW_MOUSE.get());
     }
 
 

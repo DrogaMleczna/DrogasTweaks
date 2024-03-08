@@ -2,6 +2,7 @@ package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.ai.ScorpionAttackGoal;
+import com.drogamleczna.drogastweaks.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -123,19 +124,19 @@ public class ScorpionEntity extends Animal {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.SILVERFISH_AMBIENT;
+        return ModSounds.SCORPION_AMBIENT.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.SILVERFISH_DEATH;
+        return ModSounds.SCORPION_DEATH.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.SILVERFISH_HURT;
+        return ModSounds.SCORPION_HURT.get();
     }
 
     public static boolean canSpawn(EntityType<ScorpionEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){

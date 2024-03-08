@@ -1,0 +1,17 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "item",
+          "weight": 6,
+          "name": "drogastweaks:raw_mouse"
+        }
+      ]
+    }
+  ]
+}

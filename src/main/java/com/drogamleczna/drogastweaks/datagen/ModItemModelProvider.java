@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.armortrim.TrimMaterial;
@@ -51,6 +52,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SNAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.OWL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.MOUSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.SNAIL_SHELL);
 
@@ -58,6 +60,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         saplingItem(ModBlocks.DEAD_TREE_SAPLING);
 
+        simpleItem(ModItems.RAW_MOUSE);
+        simpleItem(ModItems.COOKED_MOUSE);
+
+        simpleItem(ModItems.LOBSTER_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -75,6 +81,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(DrogasTweaks.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder bucketItem(RegistryObject<BucketItem> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(DrogasTweaks.MOD_ID, "item/" + item.getId().getPath()));
     }
 

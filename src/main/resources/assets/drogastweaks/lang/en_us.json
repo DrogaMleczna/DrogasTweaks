@@ -41,5 +41,32 @@
   "item.drogastweaks.owl_spawn_egg": "Owl Spawn Egg",
   "entity.drogastweaks.owl" : "Owl",
 
+  "item.drogastweaks.mouse_spawn_egg": "Mouse Spawn Egg",
+  "entity.drogastweaks.mouse" : "Mouse",
+  "item.drogastweaks.raw_mouse": "Raw Mouse",
+  "item.drogastweaks.cooked_mouse": "Cooked Mouse",
+
+  "sounds.drogastweaks.owl_hoot": "Owl hoots",
+  "sounds.drogastweaks.owl_hurt": "Owl hurts",
+  "sounds.drogastweaks.owl_death": "Owl dies",
+
+  "sounds.drogastweaks.mouse_squeak": "Mouse squeaks",
+  "sounds.drogastweaks.mouse_hurt": "Mouse hurts",
+  "sounds.drogastweaks.mouse_death": "Mouse dies",
+
+  "sounds.drogastweaks.lobster_hurt": "Lobster hurts",
+  "sounds.drogastweaks.lobster_death": "Lobster dies",
+
+  "sounds.drogastweaks.crab_hurt": "Crab hurts",
+  "sounds.drogastweaks.crab_death": "Crab dies",
+
+  "sounds.drogastweaks.scorpion_hurt": "Scorpion hurts",
+  "sounds.drogastweaks.scorpion_death": "Scorpion dies",
+  "sounds.drogastweaks.scorpion_ambient": "Scorpion hisses",
+
+  "sounds.drogastweaks.snail_hurt": "Snail hurts",
+  "sounds.drogastweaks.snail_death": "Snail dies",
+
+
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

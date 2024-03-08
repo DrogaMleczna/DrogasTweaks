@@ -20,6 +20,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.SCORPION.get(), ScorpionEntity.createAttributes().build());
         event.put(ModEntities.SNAIL.get(), SnailEntity.createAttributes().build());
         event.put(ModEntities.OWL.get(), OwlEntity.createAttributes().build());
+        event.put(ModEntities.MOUSE.get(), MouseEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -29,6 +30,7 @@ public class ModEventBusEvents {
         event.register(ModEntities.SCORPION.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, ScorpionEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(ModEntities.SNAIL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, SnailEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(ModEntities.OWL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, OwlEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(ModEntities.MOUSE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.WORLD_SURFACE, MouseEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
 
     }
 }

@@ -16,5 +16,90 @@
     "sounds": [
       "drogastweaks:owl_death"
     ]
+  },
+  "mouse_squeak": {
+  "subtitle": "sounds.drogastweaks.mouse_squeak",
+  "sounds": [
+    "drogastweaks:mouse_squeak"
+  ]
+},
+  "mouse_death": {
+    "subtitle": "sounds.drogastweaks.mouse_death",
+    "sounds": [
+      "drogastweaks:mouse_death"
+    ]
+  },
+  "mouse_hurt": {
+    "subtitle": "sounds.drogastweaks.mouse_hurt",
+    "sounds": [
+      "drogastweaks:mouse_hurt"
+    ]
+  },
+  "scorpion_ambient": {
+    "subtitle": "sounds.drogastweaks.scorpion_ambient",
+    "sounds": [
+      "drogastweaks:scorpion_hiss"
+    ]
+  },
+  "scorpion_hurt": {
+    "subtitle": "sounds.drogastweaks.scorpion_hurt",
+    "sounds": [
+      "drogastweaks:scorpion_hurt"
+    ]
+  },
+  "scorpion_death": {
+    "subtitle": "sounds.drogastweaks.scorpion_death",
+    "sounds": [
+      "drogastweaks:scorpion_death"
+    ]
+  },
+  "crab_ambient": {
+    "subtitle": "sounds.drogastweaks.crab_ambient",
+    "sounds": [
+      "drogastweaks:crab_ambient"
+    ]
+  },
+  "crab_hurt": {
+    "subtitle": "sounds.drogastweaks.crab_hurt",
+    "sounds": [
+      "drogastweaks:shell_hurt"
+    ]
+  },
+  "crab_death": {
+    "subtitle": "sounds.drogastweaks.crab_death",
+    "sounds": [
+      "drogastweaks:shell_hurt"
+    ]
+  },
+  "lobster_ambient": {
+    "subtitle": "sounds.drogastweaks.lobster_ambient",
+    "sounds": [
+      "drogastweaks:lobster_ambient"
+    ]
+  },
+  "lobster_hurt": {
+    "subtitle": "sounds.drogastweaks.lobster_hurt",
+    "sounds": [
+      "drogastweaks:shell_hurt"
+    ]
+  },
+  "lobster_death": {
+    "subtitle": "sounds.drogastweaks.lobster_death",
+    "sounds": [
+      "drogastweaks:shell_hurt"
+    ]
+  },
+  "snail_hurt": {
+    "subtitle": "sounds.drogastweaks.snail_hurt",
+    "sounds": [
+      "drogastweaks:snail_hurt"
+    ]
+  },
+  "snail_death": {
+    "subtitle": "sounds.drogastweaks.snail_death",
+    "sounds": [
+      "drogastweaks:snail_hurt"
+    ]
   }
+
 }

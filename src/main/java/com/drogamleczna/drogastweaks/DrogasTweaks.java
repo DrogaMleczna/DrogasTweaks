@@ -65,6 +65,7 @@ public class DrogasTweaks {
             EntityRenderers.register(ModEntities.SCORPION.get(), ScorpionRenderer::new);
             EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
             EntityRenderers.register(ModEntities.OWL.get(), OwlRenderer::new);
+            EntityRenderers.register(ModEntities.MOUSE.get(), MouseRenderer::new);
 
         }
     }

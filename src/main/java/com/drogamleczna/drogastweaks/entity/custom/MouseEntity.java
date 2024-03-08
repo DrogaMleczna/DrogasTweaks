@@ -30,8 +30,8 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import org.jetbrains.annotations.Nullable;
 
-public class CrabEntity extends Animal {
-    public CrabEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+public class MouseEntity extends Animal {
+    public MouseEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -53,9 +53,6 @@ public class CrabEntity extends Animal {
         }else{--this.idleAnimationTimeout;}
     }
 
-    protected boolean canRandomSwim() {
-        return true;
-    }
 
     @Override
     protected void updateWalkAnimation(float pPartialTick) {
@@ -67,11 +64,11 @@ public class CrabEntity extends Animal {
     }
 
     public boolean canBreatheUnderwater() {
-        return true;
+        return false;
     }
 
     public boolean isPushedByFluid() {
-        return false;
+        return true;
     }
 
     public MobType getMobType() {
@@ -80,12 +77,13 @@ public class CrabEntity extends Animal {
 
     @Override
     protected void registerGoals(){
-        this.goalSelector.addGoal(0,new PanicGoal(this, 1.15D));
-        this.goalSelector.addGoal(1, new BreedGoal(this,1.0D));
-        this.goalSelector.addGoal(2, new TemptGoal(this,1.0D, Ingredient.of(Items.COD), false));
-        this.goalSelector.addGoal(3, new FollowParentGoal(this,1.0D));
-        this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8D));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(0,new FloatGoal(this));
+        this.goalSelector.addGoal(1,new PanicGoal(this, 1.15D));
+        this.goalSelector.addGoal(2, new BreedGoal(this,1.0D));
+        this.goalSelector.addGoal(3, new TemptGoal(this,1.0D, Ingredient.of(Items.COD), false));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this,1.0D));
+        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 0.8D));
+        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 
     }
 
@@ -93,48 +91,42 @@ public class CrabEntity extends Animal {
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 3D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ARMOR, 1D);
+                .add(Attributes.MOVEMENT_SPEED, 0.2D);
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.CRAB.get().create(pLevel);
+        return ModEntities.MOUSE.get().create(pLevel);
     }
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return pStack.is(Items.COD);
+        return pStack.is(Items.WHEAT_SEEDS);
     }
 
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return ModSounds.CRAB_AMBIENT.get();
+        return ModSounds.MOUSE_SQUEAK.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSounds.CRAB_DEATH.get();
+        return ModSounds.MOUSE_DEATH.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return ModSounds.CRAB_HURT.get();
+        return ModSounds.MOUSE_HURT.get();
     }
 
-    public static boolean canSpawn(EntityType<CrabEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
-        System.out.println(SoundEvents.TURTLE_AMBIENT_LAND.getLocation());
-        return checkCrabSpawnRules(entityType, level, spawnType, position, random);
+    public static boolean canSpawn(EntityType<MouseEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
+        return checkAnimalSpawnRules(entityType, level, spawnType, position, random);
     }
 
-
-    public static boolean checkCrabSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return pLevel.getBlockState(pPos.below()).is(BlockTags.SAND) && isBrightEnoughToSpawn(pLevel, pPos);
-    }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {

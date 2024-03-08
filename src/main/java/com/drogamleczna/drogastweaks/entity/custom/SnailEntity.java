@@ -1,5 +1,6 @@
 package com.drogamleczna.drogastweaks.entity.custom;
 
+import com.drogamleczna.drogastweaks.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -60,20 +61,14 @@ public class SnailEntity extends Animal {
 
 	@Nullable
 	@Override
-	protected SoundEvent getAmbientSound() {
-		return SoundEvents.HONEY_BLOCK_SLIDE;
-	}
-
-	@Nullable
-	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.HONEY_BLOCK_BREAK;
+		return ModSounds.SNAIL_DEATH.get();
 	}
 
 	@Nullable
 	@Override
 	protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-		return SoundEvents.HONEY_BLOCK_HIT;
+		return ModSounds.SNAIL_HURT.get();
 	}
 
 	public static boolean canSpawn(EntityType<SnailEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){

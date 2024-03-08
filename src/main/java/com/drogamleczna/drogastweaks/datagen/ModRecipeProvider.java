@@ -3,8 +3,11 @@ package com.drogamleczna.drogastweaks.datagen;
 import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.block.ModBlocks;
 import com.drogamleczna.drogastweaks.item.ModItems;
+import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MinecartItem;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -14,6 +17,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -21,6 +25,7 @@ import java.util.function.Consumer;
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     private static final List<ItemLike> CRAB_COOKABLES = List.of(ModItems.CRAB_LEG.get());
     private static final List<ItemLike> Lobster_COOKABLES = List.of(ModItems.RAW_LOBSTER.get());
+    private static final List<ItemLike> MOUSE_COOKABLES = List.of(ModItems.RAW_MOUSE.get());
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -63,8 +68,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");
         oreSmelting(pWriter, Lobster_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_LOBSTER.get(), 0.25f, 200, "lobster");
-
-
+        oreSmelting(pWriter, MOUSE_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_MOUSE.get(), 0.25f, 200, "mouse");
 
     }
 

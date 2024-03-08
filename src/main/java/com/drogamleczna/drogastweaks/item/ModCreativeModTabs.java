@@ -39,6 +39,10 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.RAW_LOBSTER.get());
                         pOutput.accept(ModItems.COOKED_LOBSTER.get());
+                        pOutput.accept(ModItems.LOBSTER_BUCKET.get());
+
+                        pOutput.accept(ModItems.RAW_MOUSE.get());
+                        pOutput.accept(ModItems.COOKED_MOUSE.get());
 
                         pOutput.accept(ModItems.STINGER.get());
 
@@ -53,6 +57,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.LOBSTER_SPAWN_EGG.get());
                         pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
                         pOutput.accept(ModItems.OWL_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.MOUSE_SPAWN_EGG.get());
 
 
                     })

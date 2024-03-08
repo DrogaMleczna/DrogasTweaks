@@ -1,6 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": ["minecraft:desert", "minecraft:jungle", "minecraft:bamboo_jungle", "minecraft:sparse_jungle", "minecraft:badlands"],
+  "biomes": ["minecraft:desert", "minecraft:jungle", "minecraft:bamboo_jungle", "minecraft:sparse_jungle", "minecraft:badlands", "minecraft:wooded_badlands"],
   "spawners":
   {
     "type": "drogastweaks:scorpion",
