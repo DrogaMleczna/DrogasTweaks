@@ -1,12 +1,6 @@
 package com.drogamleczna.drogastweaks.entity.client;
 
-// Made with Blockbench 4.9.4
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
-
 import com.drogamleczna.drogastweaks.entity.custom.MouseEntity;
-import com.drogamleczna.drogastweaks.entity.custom.OwlEntity;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.Entity;
@@ -15,8 +9,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 
 public class MouseModel<T extends Entity> extends HierarchicalModel<T> {
     private final ModelPart mouse;

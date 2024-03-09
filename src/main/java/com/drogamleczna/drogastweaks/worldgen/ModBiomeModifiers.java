@@ -35,8 +35,6 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.HEDGE_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
-
-
     private static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(DrogasTweaks.MOD_ID, name));
     }

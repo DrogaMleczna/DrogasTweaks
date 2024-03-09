@@ -1,11 +1,9 @@
 package com.drogamleczna.drogastweaks.datagen;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -17,7 +15,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                                CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
         super(pOutput, pLookupProvider, pBlockTags, DrogasTweaks.MOD_ID, existingFileHelper);
     }
-
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
     }

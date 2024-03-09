@@ -24,14 +24,12 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.FlyingAnimal;
-import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -58,7 +56,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
 
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState flyAnimationState = new AnimationState();
-    public final AnimationState flyTransitionState = new AnimationState();
     private int idleAnimationTimeout = 0;
     private float flyAnimationTimeout = 1f;
 
@@ -78,7 +75,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
         } else {
             --this.idleAnimationTimeout;
         }
-
     }
 
     public MobType getMobType() {
@@ -144,13 +140,11 @@ public class OwlEntity extends Animal implements FlyingAnimal {
         if (!this.onGround() && this.flapping < 1.0F) {
             this.flapping = 1.0F;
         }
-
         this.flapping *= 0.9F;
         Vec3 vec3 = this.getDeltaMovement();
         if (!this.onGround() && vec3.y < 0.0D) {
             this.setDeltaMovement(vec3.multiply(1.0D, 0.6D, 1.0D));
         }
-
         this.flap += this.flapping * 2.0F;
     }
 
@@ -172,7 +166,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
         public OwlWanderGoal(PathfinderMob pMob, double pModifier) {
             super(pMob, pModifier);
         }
-
         @javax.annotation.Nullable
         protected Vec3 getPosition() {
             Vec3 vec3 = null;
@@ -183,7 +176,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
             if (this.mob.getRandom().nextFloat() >= this.probability) {
                 vec3 = this.getTreePos();
             }
-
             return vec3 == null ? super.getPosition() : vec3;
         }
 
@@ -240,7 +232,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
 
     public static boolean canSpawn(EntityType<OwlEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random){
         return checkOwlSpawnRules(entityType, level, spawnType, position, random);
-
     }
 
 

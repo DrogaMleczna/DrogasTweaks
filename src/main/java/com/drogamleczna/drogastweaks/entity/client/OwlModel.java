@@ -1,12 +1,6 @@
 package com.drogamleczna.drogastweaks.entity.client;
 
-// Made with Blockbench 4.9.4
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
-
 import com.drogamleczna.drogastweaks.entity.animations.ModAnimationDefinitions;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
 import com.drogamleczna.drogastweaks.entity.custom.OwlEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -100,10 +94,8 @@ public class OwlModel<T extends Entity> extends HierarchicalModel<T> {
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        //this.animateWalk(ModAnimationDefinitions.OWL_WALK, limbSwing, limbSwingAmount, 10f, 5f);
         this.animate(((OwlEntity) entity).idleAnimationState, ModAnimationDefinitions.OWL_IDLE, ageInTicks, 1f);
         this.animate(((OwlEntity) entity).flyAnimationState, ModAnimationDefinitions.OWL_FLIGHT_ALT, ageInTicks, 1f);
-        //this.animate(((OwlEntity) entity).flyTransitionState, ModAnimationDefinitions.OWL_FLIGHT_TRANSITION, ageInTicks, 1f);
     }
 
     @Override

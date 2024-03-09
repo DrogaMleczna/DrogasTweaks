@@ -4,15 +4,9 @@ import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.item.custom.ModFoods;
 import com.drogamleczna.drogastweaks.item.custom.StingerStickItem;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.MobBucketItem;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -73,8 +67,6 @@ public class ModItems
     public static final RegistryObject<Item> COOKED_MOUSE = ITEMS.register("cooked_mouse",
             () -> new Item(new Item.Properties().food(ModFoods.COOKED_MOUSE)));
 
-    //public static final RegistryObject<Item> LOBSTER_BUCKET = ITEMS.register("lobster_bucket",
-    //        () -> new MobBucketItem(ModEntities.LOBSTER.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1)));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

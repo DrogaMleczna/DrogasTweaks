@@ -4,7 +4,6 @@ import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.variant.LobsterVariant;
 import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.sound.ModSounds;
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -12,33 +11,23 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
 public class LobsterEntity extends Animal {
@@ -48,8 +37,6 @@ public class LobsterEntity extends Animal {
 
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.INT);
-
-    //private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.BOOLEAN);
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
@@ -77,7 +64,6 @@ public class LobsterEntity extends Animal {
         float f;
         if(this.getPose() == Pose.STANDING){f = Math.min(pPartialTick * 6f, 1f);}
         else{f = 0f;}
-
         this.walkAnimation.update(f, 0.2f);
     }
 
@@ -179,19 +165,13 @@ public class LobsterEntity extends Animal {
         }else{
             setVariant(LobsterVariant.DEFAULT);
         }
-
-        //LobsterVariant variant = Util.getRandom(LobsterVariant.values(), this.random);
-        //setVariant(variant);
         SpawnGroupData spawngroupdata = super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         return spawngroupdata;
     }
-    /* VARIANTS */
 
     public LobsterVariant getVariant() {
         return LobsterVariant.byId(this.getTypeVariant() & 255);
     }
-
-
 
     private int getTypeVariant(){
         return this.entityData.get(DATA_ID_TYPE_VARIANT);

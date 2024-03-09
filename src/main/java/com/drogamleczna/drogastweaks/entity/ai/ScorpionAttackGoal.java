@@ -64,11 +64,6 @@ public class ScorpionAttackGoal extends MeleeAttackGoal {
         return this.secsUntilNextAttack <= attackDelay;
     }
 
-    protected float getSecsUntilNextAttack() {
-        return this.secsUntilNextAttack;
-    }
-
-
     protected void performAttack(LivingEntity pEnemy) {
         this.resetAttackCooldown();
         this.mob.swing(InteractionHand.MAIN_HAND);
@@ -80,8 +75,7 @@ public class ScorpionAttackGoal extends MeleeAttackGoal {
     public void tick() {
         super.tick();
         if(shouldCountTillNextAttack) {
-            this.secsUntilNextAttack = Math.max(this.secsUntilNextAttack - 0.1f, 0); //Certified WTF behaviour, should use with tics, but
-                                                                                    // uses seconds instead
+            this.secsUntilNextAttack = Math.max(this.secsUntilNextAttack - 0.1f, 0); //Certified WTF behaviour, should use tics, but uses seconds instead
         }
     }
 

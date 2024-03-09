@@ -8,14 +8,6 @@
   "block.drogastweaks.flint_block": "Blok Krzemienia",
   "block.drogastweaks.flint_ore": "Ruda Krzemienia",
 
-  "block.drogastweaks.willow_planks": "Wierzbowe Deski",
-  "block.drogastweaks.willow_leaves": "Wierzbowe Liście",
-  "block.drogastweaks.willow_sapling": "Sadzonka Wierzby",
-  "block.drogastweaks.willow_log": "Wierzbowy Pień",
-  "block.drogastweaks.willow_wood": "Wierzbowe Drewno",
-  "block.drogastweaks.stripped_willow_log": "Ociosany Wierzbowy Pień",
-  "block.drogastweaks.stripped_willow_wood": "Ociosane Wierzbowe Drewno",
-
   "item.drogastweaks.crab_spawn_egg": "Jajo Przyzywające Kraba",
   "entity.drogastweaks.crab" : "Krab",
   "item.drogastweaks.crab_leg": "Noga Kraba",

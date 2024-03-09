@@ -2,7 +2,7 @@ package com.drogamleczna.drogastweaks.entity.custom;
 
 import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.sound.ModSounds;
-import net.minecraft.client.sounds.SoundEngineExecutor;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -13,21 +13,16 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class CrabEntity extends Animal {
@@ -62,7 +57,6 @@ public class CrabEntity extends Animal {
         float f;
         if(this.getPose() == Pose.STANDING){f = Math.min(pPartialTick * 6f, 1f);}
         else{f = 0f;}
-
         this.walkAnimation.update(f, 0.2f);
     }
 
@@ -86,7 +80,6 @@ public class CrabEntity extends Animal {
         this.goalSelector.addGoal(3, new FollowParentGoal(this,1.0D));
         this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-
     }
 
     public static AttributeSupplier.Builder createAttributes(){
@@ -130,7 +123,6 @@ public class CrabEntity extends Animal {
         System.out.println(SoundEvents.TURTLE_AMBIENT_LAND.getLocation());
         return checkCrabSpawnRules(entityType, level, spawnType, position, random);
     }
-
 
     public static boolean checkCrabSpawnRules(EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
         return pLevel.getBlockState(pPos.below()).is(BlockTags.SAND) && isBrightEnoughToSpawn(pLevel, pPos);

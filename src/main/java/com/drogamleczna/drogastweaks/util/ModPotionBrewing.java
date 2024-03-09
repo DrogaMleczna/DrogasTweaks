@@ -11,7 +11,6 @@ public class ModPotionBrewing implements IBrewingRecipe {
     private final Potion inputPotion;
     private final Item ingredient;
     private final Potion outputPotion;
-
     public ModPotionBrewing(Potion input, Item ingredient, Potion output) {
         this.inputPotion = input;
         this.ingredient = ingredient;

@@ -1,7 +1,6 @@
 package com.drogamleczna.drogastweaks.entity.client;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
 import com.drogamleczna.drogastweaks.entity.custom.SnailEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;

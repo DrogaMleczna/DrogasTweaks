@@ -1,7 +1,6 @@
 package com.drogamleczna.drogastweaks.datagen.loot;
 
 import com.drogamleczna.drogastweaks.block.ModBlocks;
-import com.drogamleczna.drogastweaks.item.ModItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -11,18 +10,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -44,16 +38,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.FLINT_BLOCK.get());
 
-        //createOreDrop(ModBlocks.FLINT_ORE.get(), Items.FLINT);
-
         add(ModBlocks.FLINT_ORE.get(), (pBlock) -> {
             return createOreDrop(pBlock, Items.FLINT);
         });
 
         dropOther(ModBlocks.TWIGS.get(), Items.STICK);
         dropSelf(ModBlocks.DEAD_TREE_SAPLING.get());
-
-
     }
 
     @Override

@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,8 +24,6 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.DEAD_TREE_SAPLING.get());
 
                         pOutput.accept(ModBlocks.TWIGS.get());
-
-                        //pOutput.accept(ModItems.PEAR.get());
 
                         pOutput.accept(ModItems.CRAB_LEG.get());
                         pOutput.accept(ModItems.COOKED_CRAB_LEG.get());

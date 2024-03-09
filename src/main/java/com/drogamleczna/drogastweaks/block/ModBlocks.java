@@ -1,7 +1,6 @@
 package com.drogamleczna.drogastweaks.block;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
 import com.drogamleczna.drogastweaks.worldgen.tree.DeadTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -12,7 +11,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.crafting.conditions.FalseCondition;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -51,8 +49,6 @@ public class ModBlocks
 
     public static final RegistryObject<Block> DEAD_TREE_SAPLING = registerBlock("dead_tree_sapling",
             () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-
-
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {

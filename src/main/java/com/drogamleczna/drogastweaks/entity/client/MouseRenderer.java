@@ -1,9 +1,7 @@
 package com.drogamleczna.drogastweaks.entity.client;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
-import com.drogamleczna.drogastweaks.entity.custom.CrabEntity;
 import com.drogamleczna.drogastweaks.entity.custom.MouseEntity;
-import com.drogamleczna.drogastweaks.entity.custom.OwlEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
