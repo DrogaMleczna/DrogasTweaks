@@ -29,9 +29,6 @@ public class ModItems
             () -> new SwordItem(WOOD, 4, -3,
                     new Item.Properties().durability(256)));
 
-    //public static final RegistryObject<Item> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
-    //        () -> new ModSpawnEggItem(ModEntityTypes.CRAB, 0xC54600, 0xFF8100, new Item.Properties()));
-
     public static final RegistryObject<Item> CRAB_LEG = ITEMS.register("crab_leg",
             () -> new Item(new Item.Properties().food(ModFoods.CRAB_LEG)));
     public static final RegistryObject<Item> COOKED_CRAB_LEG = ITEMS.register("cooked_crab_leg",
@@ -76,8 +73,8 @@ public class ModItems
     public static final RegistryObject<Item> COOKED_MOUSE = ITEMS.register("cooked_mouse",
             () -> new Item(new Item.Properties().food(ModFoods.COOKED_MOUSE)));
 
-    public static final RegistryObject<Item> LOBSTER_BUCKET = ITEMS.register("lobster_bucket",
-            () -> new MobBucketItem(ModEntities.LOBSTER.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1)));
+    //public static final RegistryObject<Item> LOBSTER_BUCKET = ITEMS.register("lobster_bucket",
+    //        () -> new MobBucketItem(ModEntities.LOBSTER.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1)));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

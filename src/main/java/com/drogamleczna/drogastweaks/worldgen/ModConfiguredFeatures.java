@@ -2,7 +2,6 @@ package com.drogamleczna.drogastweaks.worldgen;
 
 import com.drogamleczna.drogastweaks.DrogasTweaks;
 import com.drogamleczna.drogastweaks.block.ModBlocks;
-import com.drogamleczna.drogastweaks.worldgen.tree.custom.WillowFoliagePlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -34,30 +33,16 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?,?>> FLINT_BLOCK_KEY = registerKey("flint_block");
+    public static final ResourceKey<ConfiguredFeature<?,?>> FLINT_ORE_KEY = registerKey("flint_ore");
 
-    public static final ResourceKey<ConfiguredFeature<?,?>> WILLOW_KEY = registerKey("willow");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEAD_TREE_KEY = registerKey("dead_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> HEDGE_KEY = registerKey("hedge");
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
 
 
-        List<OreConfiguration.TargetBlockState> overworldFlintBlock = List.of(OreConfiguration.target(stoneReplaceable, ModBlocks.FLINT_BLOCK.get().defaultBlockState()));
-        register(context, FLINT_BLOCK_KEY, Feature.ORE, new OreConfiguration(overworldFlintBlock, 5));
-
-        register(context, WILLOW_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.WILLOW_LOG.get()),
-                new CherryTrunkPlacer(6, 1, 0,
-                        new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(1), 1) //def: 1, 1, 2, 1, 3, 1
-                                .add(ConstantInt.of(1), 1).add(ConstantInt.of(1), 1).build()),
-
-                        UniformInt.of(2, 4), UniformInt.of(-4, -3),
-                        UniformInt.of(-1, 0)),
-
-                BlockStateProvider.simple(ModBlocks.WILLOW_LEAVES.get()),
-                new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.2F, 0.4F),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+        List<OreConfiguration.TargetBlockState> overworldFlintBlock = List.of(OreConfiguration.target(stoneReplaceable, ModBlocks.FLINT_ORE.get().defaultBlockState()));
+        register(context, FLINT_ORE_KEY, Feature.ORE, new OreConfiguration(overworldFlintBlock, 5));
 
 
 

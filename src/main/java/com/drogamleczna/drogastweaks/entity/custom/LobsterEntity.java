@@ -41,7 +41,7 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
-public class LobsterEntity extends Animal implements Bucketable {
+public class LobsterEntity extends Animal {
     public LobsterEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -49,7 +49,7 @@ public class LobsterEntity extends Animal implements Bucketable {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.INT);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.BOOLEAN);
+    //private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(LobsterEntity.class, EntityDataSerializers.BOOLEAN);
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
@@ -201,43 +201,5 @@ public class LobsterEntity extends Animal implements Bucketable {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 
-    @Override
-    public boolean fromBucket() {
-        return this.entityData.get(FROM_BUCKET);
-    }
-
-    @Override
-    public void setFromBucket(boolean pFromBucket) {
-        this.entityData.set(FROM_BUCKET, pFromBucket);
-    }
-
-    @Override
-    public void saveToBucketTag(ItemStack pStack) {
-        Bucketable.saveDefaultDataToBucketTag(this, pStack);
-        CompoundTag compoundtag = pStack.getOrCreateTag();
-        compoundtag.putInt("Variant", this.getVariant().getId());
-        compoundtag.putInt("Age", this.getAge());
-
-    }
-
-    @Override
-    public void loadFromBucketTag(CompoundTag pTag) {
-        Bucketable.loadDefaultDataFromBucketTag(this, pTag);
-        this.setVariant(LobsterVariant.byId(pTag.getInt("Variant")));
-        if (pTag.contains("Age")) {
-            this.setAge(pTag.getInt("Age"));
-        }
-
-    }
-
-    @Override
-    public ItemStack getBucketItemStack() {
-        return new ItemStack(ModItems.LOBSTER_BUCKET.get());
-    }
-
-    @Override
-    public SoundEvent getPickupSound() {
-        return SoundEvents.BUCKET_FILL_AXOLOTL;
-    }
 }
 

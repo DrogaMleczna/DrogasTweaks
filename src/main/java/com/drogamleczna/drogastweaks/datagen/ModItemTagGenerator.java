@@ -20,12 +20,5 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ItemTags.LOGS_THAT_BURN)
-                .add(ModBlocks.WILLOW_LOG.get().asItem())
-                .add(ModBlocks.WILLOW_WOOD.get().asItem())
-                .add(ModBlocks.STRIPPED_WILLOW_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_WILLOW_WOOD.get().asItem());
-        this.tag(ItemTags.PLANKS)
-                .add(ModBlocks.WILLOW_PLANKS.get().asItem());
     }
 }

@@ -20,21 +20,17 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> FLINT_BLOCK_PLACED_KEY = registerKey("flint_block_placed");
+    public static final ResourceKey<PlacedFeature> FLINT_ORE_PLACED_KEY = registerKey("flint_ore_placed");
 
-    public static final ResourceKey<PlacedFeature> WILLOW_PLACED_KEY = registerKey("willow_placed");
     public static final ResourceKey<PlacedFeature> DEAD_TREE_PLACED_KEY = registerKey("dead_tree_placed");
     public static final ResourceKey<PlacedFeature> HEDGE_PLACED_KEY = registerKey("hedge_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?,?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        register(context, FLINT_BLOCK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FLINT_BLOCK_KEY),
+        register(context, FLINT_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FLINT_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(12,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(120))));
-
-        register(context, WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.WILLOW_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2), //count, probability of extra, extra count
-                        ModBlocks.WILLOW_SAPLING.get()));                                                         // 1/probability has to be int, error otherwise
+                                                      // 1/probability has to be int, error otherwise
 
         register(context, DEAD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEAD_TREE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.01f,1),

@@ -26,19 +26,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.FLINT_BLOCK);
+        blockWithItem(ModBlocks.FLINT_ORE);
 
         leavesBlock(ModBlocks.TWIGS);
-        leavesBlock(ModBlocks.WILLOW_LEAVES);
-
-        blockWithItem(ModBlocks.WILLOW_PLANKS);
-
-        logBlockWithItem(ModBlocks.WILLOW_LOG);
-        logBlockWithItem(ModBlocks.STRIPPED_WILLOW_LOG);
-
-        axisBlockWithItem(ModBlocks.WILLOW_WOOD, ModBlocks.WILLOW_LOG);
-        axisBlockWithItem(ModBlocks.STRIPPED_WILLOW_WOOD, ModBlocks.STRIPPED_WILLOW_LOG);
-
-        saplingBlock(ModBlocks.WILLOW_SAPLING);
 
         saplingBlock(ModBlocks.DEAD_TREE_SAPLING);
 

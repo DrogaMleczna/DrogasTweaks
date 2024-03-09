@@ -20,22 +20,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.FLINT_BLOCK.get());
+                .add(ModBlocks.FLINT_BLOCK.get())
+                .add(ModBlocks.FLINT_ORE.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.FLINT_BLOCK.get());
-        this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(ModBlocks.WILLOW_LOG.get())
-                .add(ModBlocks.WILLOW_WOOD.get())
-                .add(ModBlocks.STRIPPED_WILLOW_LOG.get())
-                .add(ModBlocks.STRIPPED_WILLOW_WOOD.get());
-        this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.WILLOW_PLANKS.get());
+                .add(ModBlocks.FLINT_BLOCK.get())
+                .add(ModBlocks.FLINT_ORE.get());
         this.tag(BlockTags.LEAVES)
-                .add(ModBlocks.TWIGS.get())
-                .add(ModBlocks.WILLOW_LEAVES.get());
+                .add(ModBlocks.TWIGS.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(ModBlocks.TWIGS.get())
-                .add(ModBlocks.WILLOW_LEAVES.get());
+                .add(ModBlocks.TWIGS.get());
 
     }
 }

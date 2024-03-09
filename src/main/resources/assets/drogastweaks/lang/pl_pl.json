@@ -6,6 +6,7 @@
   "block.drogastweaks.dead_tree_sapling": "Martwa Sadzonka",
 
   "block.drogastweaks.flint_block": "Blok Krzemienia",
+  "block.drogastweaks.flint_ore": "Ruda Krzemienia",
 
   "block.drogastweaks.willow_planks": "Wierzbowe Deski",
   "block.drogastweaks.willow_leaves": "Wierzbowe Liście",
@@ -40,6 +41,34 @@
 
   "item.drogastweaks.owl_spawn_egg": "Jajo przyzywające Sowy",
   "entity.drogastweaks.owl" : "Sowa",
+
+  "item.drogastweaks.mouse_spawn_egg": "Jajo Przyzywające Myszy",
+  "entity.drogastweaks.mouse" : "Mysz",
+  "item.drogastweaks.raw_mouse": "Surowa Mysz",
+  "item.drogastweaks.cooked_mouse": "Pieczona Mysz",
+
+  "sounds.drogastweaks.owl_hoot": "Sowa pohukuje",
+  "sounds.drogastweaks.owl_hurt": "Sowa cierpi",
+  "sounds.drogastweaks.owl_death": "Sowa ginie",
+
+  "sounds.drogastweaks.mouse_squeak": "Mysz piszczy",
+  "sounds.drogastweaks.mouse_hurt": "Mysz cierpi",
+  "sounds.drogastweaks.mouse_death": "Mysz ginie",
+
+  "sounds.drogastweaks.lobster_ambient": "Homar klika",
+  "sounds.drogastweaks.lobster_hurt": "Homar cierpi",
+  "sounds.drogastweaks.lobster_death": "Homar ginie",
+
+  "sounds.drogastweaks.crab_ambient": "Krab klika",
+  "sounds.drogastweaks.crab_hurt": "Krab cierpi",
+  "sounds.drogastweaks.crab_death": "Krab ginie",
+
+  "sounds.drogastweaks.scorpion_hurt": "Skorpion cierpi",
+  "sounds.drogastweaks.scorpion_death": "Skorpion ginie",
+  "sounds.drogastweaks.scorpion_ambient": "Skorpion syczy",
+
+  "sounds.drogastweaks.snail_hurt": "Ślimak cierpi",
+  "sounds.drogastweaks.snail_death": "Ślimak ginie",
 
   "creativetab.drogas_tab": "Droga's Tweaks"
 }

@@ -11,13 +11,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -40,18 +44,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.FLINT_BLOCK.get());
 
-        dropSelf(ModBlocks.WILLOW_PLANKS.get());
-        dropSelf(ModBlocks.WILLOW_LOG.get());
-        dropSelf(ModBlocks.WILLOW_WOOD.get());
-        dropSelf(ModBlocks.STRIPPED_WILLOW_LOG.get());
-        dropSelf(ModBlocks.STRIPPED_WILLOW_WOOD.get());
-        dropSelf(ModBlocks.WILLOW_SAPLING.get());
+        //createOreDrop(ModBlocks.FLINT_ORE.get(), Items.FLINT);
+
+        add(ModBlocks.FLINT_ORE.get(), (pBlock) -> {
+            return createOreDrop(pBlock, Items.FLINT);
+        });
 
         dropOther(ModBlocks.TWIGS.get(), Items.STICK);
         dropSelf(ModBlocks.DEAD_TREE_SAPLING.get());
 
-        add(ModBlocks.WILLOW_LEAVES.get(), block ->
-                createLeavesDropsWithItem(block, ModBlocks.WILLOW_SAPLING.get(), ModItems.PEAR.get(),NORMAL_LEAVES_SAPLING_CHANCES));
 
     }
 
@@ -59,6 +60,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
+
 
     protected LootTable.Builder createLeavesDropsWithItem(Block pOakLeavesBlock, Block pSaplingBlock, Item pItem , float... pChances) {
         return this.createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))

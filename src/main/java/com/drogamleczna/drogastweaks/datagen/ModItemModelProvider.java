@@ -56,14 +56,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.SNAIL_SHELL);
 
-        saplingItem(ModBlocks.WILLOW_SAPLING);
-
         saplingItem(ModBlocks.DEAD_TREE_SAPLING);
 
         simpleItem(ModItems.RAW_MOUSE);
         simpleItem(ModItems.COOKED_MOUSE);
 
-        simpleItem(ModItems.LOBSTER_BUCKET);
+        //simpleItem(ModItems.LOBSTER_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
