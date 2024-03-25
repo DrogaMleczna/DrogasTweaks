@@ -18,6 +18,7 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.SNAIL_LAYER, SnailModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.OWL_LAYER, OwlModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.MOUSE_LAYER, MouseModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.MOLE_LAYER, MoleModel::createBodyLayer);
     }
 
 }

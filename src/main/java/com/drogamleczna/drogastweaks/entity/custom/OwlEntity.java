@@ -153,7 +153,6 @@ public class OwlEntity extends Animal implements FlyingAnimal {
     }
 
     protected void onFlap() {
-        this.playSound(SoundEvents.PARROT_FLY, 0.15F, 0.6F);
         this.nextFlap = this.flyDist + this.flapSpeed / 2.0F;
     }
 
@@ -216,6 +215,7 @@ public class OwlEntity extends Animal implements FlyingAnimal {
     protected SoundEvent getAmbientSound() {
         return ModSounds.OWL_HOOT.get();
     }
+
 
     @Nullable
     @Override

@@ -57,6 +57,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SNAIL_SHELL.get()), has(ModItems.SNAIL_SHELL.get()))
                 .unlockedBy(getHasName(Items.NAUTILUS_SHELL), has(Items.NAUTILUS_SHELL))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.TRIDENT)
+                .pattern("SYS")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('S', Items.COPPER_INGOT)
+                .define('Y', Items.PRISMARINE_SHARD)
+                .unlockedBy(getHasName(Items.PRISMARINE_SHARD), has(Items.PRISMARINE_SHARD))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PRISMARINE_SHARD, 4)
+                .requires(Items.PRISMARINE)
+                .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
+                .unlockedBy(getHasName(Items.PRISMARINE_SHARD), has(Items.PRISMARINE_SHARD))
+                .save(pWriter);
 
 
         oreSmelting(pWriter, CRAB_COOKABLES, RecipeCategory.FOOD, ModItems.COOKED_CRAB_LEG.get(), 0.25f, 200, "crab");

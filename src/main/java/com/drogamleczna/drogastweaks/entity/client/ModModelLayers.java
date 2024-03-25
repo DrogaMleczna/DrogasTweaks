@@ -21,5 +21,7 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation MOUSE_LAYER = new ModelLayerLocation(
             new ResourceLocation(DrogasTweaks.MOD_ID, "mouse_layer"), "main");
+    public static final ModelLayerLocation MOLE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DrogasTweaks.MOD_ID, "mole_layer"), "main");
 
 }

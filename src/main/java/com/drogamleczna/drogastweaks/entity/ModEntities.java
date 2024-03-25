@@ -30,11 +30,14 @@ public class ModEntities {
 
     public static  final RegistryObject<EntityType<OwlEntity>> OWL =
             ENTITY_TYPES.register("owl", () -> EntityType.Builder.of(OwlEntity::new, MobCategory.CREATURE)
-                    .sized(0.35f,0.8f).build("owl"));
+                    .sized(0.4f,0.8f).build("owl"));
 
     public static  final RegistryObject<EntityType<MouseEntity>> MOUSE =
             ENTITY_TYPES.register("mouse", () -> EntityType.Builder.of(MouseEntity::new, MobCategory.CREATURE)
                     .sized(0.25f,0.25f).build("mouse"));
+    public static  final RegistryObject<EntityType<MoleEntity>> MOLE =
+            ENTITY_TYPES.register("mole", () -> EntityType.Builder.of(MoleEntity::new, MobCategory.CREATURE)
+                    .sized(0.525f,0.3f).build("mole"));
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
     }

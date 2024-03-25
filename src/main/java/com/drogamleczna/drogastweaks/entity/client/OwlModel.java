@@ -47,13 +47,13 @@ public class OwlModel<T extends Entity> extends HierarchicalModel<T> {
 
         PartDefinition left2 = legs.addOrReplaceChild("left2", CubeListBuilder.create().texOffs(21, 0).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -2.0F, 0.0F));
 
-        PartDefinition cube_r2 = left2.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(13, 13).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 15).addBox(-0.5F, 0.0F, -0.5F, 2.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
+        PartDefinition cube_r2 = left2.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(13, 13).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 0.01F, 2.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 15).addBox(-0.5F, 0.0F, -0.5F, 2.0F, 0.01F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
 
         PartDefinition right2 = legs.addOrReplaceChild("right2", CubeListBuilder.create().texOffs(17, 0).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.0F, 0.0F));
 
-        PartDefinition cube_r3 = right2.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 4).addBox(-1.5F, 0.0F, -0.5F, 2.0F, 0.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 0).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 0.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
+        PartDefinition cube_r3 = right2.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 4).addBox(-1.5F, 0.0F, -0.5F, 2.0F, 0.01F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 0).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 0.01F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
 
         PartDefinition tail = body.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
@@ -68,11 +68,11 @@ public class OwlModel<T extends Entity> extends HierarchicalModel<T> {
         PartDefinition head = owl.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 13).addBox(-2.5F, -5.25F, -2.5F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 23).addBox(-0.5F, -2.0F, -3.1F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.0F, -1.5F));
 
-        PartDefinition cube_r8 = head.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(0, 15).addBox(0.0F, -1.0F, 1.0F, 0.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 0).addBox(0.0F, -2.0F, -1.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, -5.0F, -1.5F, 0.0F, 0.0F, -0.8727F));
+        PartDefinition cube_r8 = head.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(0, 15).addBox(0.0F, -1.0F, 1.0F, 0.01F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 0).addBox(0.0F, -2.0F, -1.0F, 0.01F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, -5.0F, -1.5F, 0.0F, 0.0F, -0.8727F));
 
-        PartDefinition cube_r9 = head.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, -1.0F, 1.0F, 0.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 11).addBox(0.0F, -2.0F, -1.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, -5.0F, -1.5F, 0.0F, 0.0F, 0.8727F));
+        PartDefinition cube_r9 = head.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, -1.0F, 1.0F, 0.01F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 11).addBox(0.0F, -2.0F, -1.0F, 0.01F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, -5.0F, -1.5F, 0.0F, 0.0F, 0.8727F));
 
         PartDefinition wings = owl.addOrReplaceChild("wings", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 

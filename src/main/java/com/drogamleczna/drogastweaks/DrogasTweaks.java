@@ -6,6 +6,7 @@ import com.drogamleczna.drogastweaks.entity.ModEntities;
 import com.drogamleczna.drogastweaks.entity.client.*;
 import com.drogamleczna.drogastweaks.item.ModCreativeModTabs;
 import com.drogamleczna.drogastweaks.item.ModItems;
+import com.drogamleczna.drogastweaks.loot.ModLootModifiers;
 import com.drogamleczna.drogastweaks.sound.ModSounds;
 import com.drogamleczna.drogastweaks.util.ModPotionBrewing;
 import com.drogamleczna.drogastweaks.worldgen.tree.ModFoliagePlacers;
@@ -37,6 +38,7 @@ public class DrogasTweaks {
         modEventBus.addListener(this::commonSetup);
         ModFoliagePlacers.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -55,6 +57,7 @@ public class DrogasTweaks {
             EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
             EntityRenderers.register(ModEntities.OWL.get(), OwlRenderer::new);
             EntityRenderers.register(ModEntities.MOUSE.get(), MouseRenderer::new);
+            EntityRenderers.register(ModEntities.MOLE.get(), MoleRenderer::new);
 
         }
     }
